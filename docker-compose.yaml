@@ -1,0 +1,8 @@
+version: '2'
+services:
+  core:
+    build: .
+    image: jeguzzi/thymiod
+    network_mode: host
+    privileged: true
+    command: roslaunch thymioid boot.launch
