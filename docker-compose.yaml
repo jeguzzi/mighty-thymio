@@ -6,37 +6,55 @@ services:
     network_mode: host
     privileged: true
     command: roslaunch thymioid robot.launch
-    environment:
-      - "ROS_MASTER_URI=http://localhost:11311"
-      - "ROS_HOSTNAME=localhost"
+    env_file:
+      - ./ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
   camera:
     image: jeguzzi/thymiod
     network_mode: host
     privileged: true
     command: roslaunch thymioid camera.launch
-    environment:
-      - "ROS_MASTER_URI=http://localhost:11311"
-      - "ROS_HOSTNAME=localhost"
+    env_file:
+      - ./ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+    depends_on:
+      - core
   ups:
     image: jeguzzi/thymiod
     network_mode: host
     privileged: true
     command: roslaunch thymioid ups.launch
-    environment:
-      - "ROS_MASTER_URI=http://localhost:11311"
-      - "ROS_HOSTNAME=localhost"
+    env_file:
+      - ./ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+    depends_on:
+      - core
   ui:
-      image: jeguzzi/thymiod
-      network_mode: host
-      privileged: true
-      command: roslaunch thymioid ui.launch
-      environment:
-        - "ROS_MASTER_URI=http://localhost:11311"
-        - "ROS_HOSTNAME=localhost"
+    image: jeguzzi/thymiod
+    network_mode: host
+    privileged: true
+    command: roslaunch thymioid ui.launch
+    env_file:
+      - ./ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
   portainer:
-    image: portainer/portainer
+    image: portainer/portainer:linux-arm
     # command: --host=unix:///var/run/docker.sock
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 9000:9000
+  demo:
+    image: jeguzzi/thymioid:demo_ml
+    command: roslaunch thymio_controller headless_demo.launch
+    env_file:
+      - ./ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+    network_mode: host
+    depends_on:
+      - core
