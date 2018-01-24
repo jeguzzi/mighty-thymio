@@ -16,7 +16,21 @@ RUN catkin config --blacklist thymio_navigation ethzasl_aseba
 
 RUN catkin build
 
+RUN apt-get update && apt-get install -y \
+    ros-kinetic-xacro \
+    ros-kinetic-robot-state-publisher \
+    ros-kinetic-image-proc \
+    ros-kinetic-usb-cam \
+    ros-kinetic-image-transport-plugins \
+    && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y \
+    python-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install wiringpi2 netifaces
+
+RUN cd src/thymioid && git pull
 
 # RUN ROS_PACKAGE_PATH=`pwd`/src/ros-aseba \
 #     rosdep install --from-paths src/ros-aseba/asebaros --ignore-src --as-root=apt:false -i -y

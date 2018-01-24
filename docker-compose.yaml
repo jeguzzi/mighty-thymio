@@ -5,4 +5,38 @@ services:
     image: jeguzzi/thymiod
     network_mode: host
     privileged: true
-    command: roslaunch thymioid boot.launch
+    command: roslaunch thymioid robot.launch
+    environment:
+      - "ROS_MASTER_URI=http://localhost:11311"
+      - "ROS_HOSTNAME=localhost"
+  camera:
+    image: jeguzzi/thymiod
+    network_mode: host
+    privileged: true
+    command: roslaunch thymioid camera.launch
+    environment:
+      - "ROS_MASTER_URI=http://localhost:11311"
+      - "ROS_HOSTNAME=localhost"
+  ups:
+    image: jeguzzi/thymiod
+    network_mode: host
+    privileged: true
+    command: roslaunch thymioid ups.launch
+    environment:
+      - "ROS_MASTER_URI=http://localhost:11311"
+      - "ROS_HOSTNAME=localhost"
+  ui:
+      image: jeguzzi/thymiod
+      network_mode: host
+      privileged: true
+      command: roslaunch thymioid ui.launch
+      environment:
+        - "ROS_MASTER_URI=http://localhost:11311"
+        - "ROS_HOSTNAME=localhost"
+  portainer:
+    image: portainer/portainer
+    # command: --host=unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 9000:9000
