@@ -1,0 +1,26 @@
+version: '2'
+services:
+  predictor:
+    image: jeguzzi/thymioid:demo_ml
+    command: roslaunch thymio_demo_ml prediction.launch
+    env_file:
+      - ./ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+    network_mode: host
+  control:
+    image: jeguzzi/thymioid:demo_ml
+    command: roslaunch thymio_demo_ml prediction.launch
+    env_file:
+      - ./ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+    network_mode: host
+  viz:
+    image: jeguzzi/thymioid:demo_ml
+    command: roslaunch thymio_demo_ml viz.launch
+    env_file:
+      - ./ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+    network_mode: host
