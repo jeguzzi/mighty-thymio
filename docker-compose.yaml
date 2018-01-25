@@ -1,7 +1,14 @@
 version: '2'
 services:
   core:
-    build: .
+    image: jeguzzi/armhf-ros-kinetic-dev
+    network_mode: host
+    command: roscore
+    env_file:
+      - ./ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+  robot:
     image: jeguzzi/thymiod
     network_mode: host
     privileged: true
@@ -10,6 +17,8 @@ services:
       - ./ros.env
     volumes:
       - ./logs:/root/.ros/log:rw
+    depends_on:
+      - core
   camera:
     image: jeguzzi/thymiod
     network_mode: host
