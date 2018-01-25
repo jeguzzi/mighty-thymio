@@ -1,7 +1,7 @@
 version: '2'
 services:
   core:
-    image: jeguzzi/armhf-ros-kinetic-dev
+    image: jeguzzi/ros:armhf-ros-kinetic-dev
     network_mode: host
     command: roscore
     env_file:
