@@ -28,9 +28,20 @@ RUN apt-get update && apt-get install -y \
     python-pip \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install wiringpi2 netifaces
+RUN pip install netifaces
+
+RUN apt-get update && apt-get install -y \
+    sudo \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN git clone https://github.com/hardkernel/wiringPi.git /tmp/wiringPi
+RUN cd /tmp/wiringPi && ./build
+
+RUN pip install wiringpi
 
 RUN cd src/thymioid && git pull
+
+
 
 # RUN ROS_PACKAGE_PATH=`pwd`/src/ros-aseba \
 #     rosdep install --from-paths src/ros-aseba/asebaros --ignore-src --as-root=apt:false -i -y

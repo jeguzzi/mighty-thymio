@@ -9,6 +9,7 @@ services:
     volumes:
       - ./logs:/root/.ros/log:rw
   robot:
+    build: .
     image: jeguzzi/thymiod
     network_mode: host
     privileged: true
@@ -65,6 +66,15 @@ services:
     volumes:
       - ./logs:/root/.ros/log:rw
     network_mode: host
-    restart: always
+    depends_on:
+      - core
+  stream:
+    image: jeguzzi/thymioid:demo_ml
+    command: roslaunch thymio_controller stream.launch
+    env_file:
+      - ./ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+    network_mode: host
     depends_on:
       - core
