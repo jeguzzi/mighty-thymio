@@ -56,5 +56,6 @@ services:
     volumes:
       - ./logs:/root/.ros/log:rw
     network_mode: host
+    restart: always
     depends_on:
       - core
