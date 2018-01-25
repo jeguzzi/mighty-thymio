@@ -10,7 +10,7 @@ services:
       - ./logs:/root/.ros/log:rw
   robot:
     build: .
-    image: jeguzzi/thymiod
+    image: jeguzzi/thymioid
     network_mode: host
     privileged: true
     command: roslaunch thymioid robot.launch
@@ -21,7 +21,7 @@ services:
     depends_on:
       - core
   camera:
-    image: jeguzzi/thymiod
+    image: jeguzzi/thymioid
     network_mode: host
     privileged: true
     command: roslaunch thymioid camera.launch
@@ -32,7 +32,7 @@ services:
     depends_on:
       - core
   ups:
-    image: jeguzzi/thymiod
+    image: jeguzzi/thymioid
     network_mode: host
     privileged: true
     command: roslaunch thymioid ups.launch
@@ -43,7 +43,7 @@ services:
     depends_on:
       - core
   ui:
-    image: jeguzzi/thymiod
+    image: jeguzzi/thymioid
     network_mode: host
     privileged: true
     command: roslaunch thymioid ui.launch
