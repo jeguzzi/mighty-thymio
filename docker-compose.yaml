@@ -27,7 +27,7 @@ services:
     network_mode: host
     privileged: true
     restart: always
-    command: roslaunch --wait thymioid camera.launch
+    command: roslaunch --wait thymioid camera.launch rectify:=false
     restart: always
     env_file:
       - ./ros.env

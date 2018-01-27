@@ -10,7 +10,7 @@ services:
     network_mode: host
   control:
     image: jeguzzi/thymioid:demo_ml
-    command: roslaunch --wait thymio_demo_ml control.launch rectify:=false
+    command: roslaunch --wait thymio_demo_ml control.launch
     env_file:
       - ../ros.env
     volumes:
