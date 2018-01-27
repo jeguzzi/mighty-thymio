@@ -4,6 +4,7 @@ services:
     image: jeguzzi/ros:armhf-kinetic-ros-dev
     network_mode: host
     command: roscore
+    restart: always
     env_file:
       - ./ros.env
     volumes:
@@ -13,7 +14,8 @@ services:
     image: jeguzzi/thymioid
     network_mode: host
     privileged: true
-    command: roslaunch thymioid robot.launch
+    command: roslaunch --wait thymioid robot.launch
+    restart: always
     env_file:
       - ./ros.env
     volumes:
@@ -24,7 +26,9 @@ services:
     image: jeguzzi/thymioid
     network_mode: host
     privileged: true
-    command: roslaunch thymioid camera.launch image_width:=320 image_height:=240 framerate:=10
+    restart: always
+    command: roslaunch --wait thymioid camera.launch
+    restart: always
     env_file:
       - ./ros.env
     volumes:
@@ -35,7 +39,8 @@ services:
     image: jeguzzi/thymioid
     network_mode: host
     privileged: true
-    command: roslaunch thymioid ups.launch
+    command: roslaunch --wait thymioid ups.launch
+    restart: always
     env_file:
       - ./ros.env
     volumes:
@@ -46,7 +51,8 @@ services:
     image: jeguzzi/thymioid
     network_mode: host
     privileged: true
-    command: roslaunch thymioid ui.launch
+    command: roslaunch --wait thymioid ui.launch
+    restart: always
     env_file:
       - ./ros.env
     volumes:
@@ -58,3 +64,4 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 9000:9000
+    restart: always

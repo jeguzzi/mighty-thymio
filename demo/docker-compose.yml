@@ -2,7 +2,7 @@ version: '2'
 services:
   predictor:
     image: jeguzzi/thymioid:demo_ml
-    command: roslaunch thymio_demo_ml prediction.launch
+    command: roslaunch --wait thymio_demo_ml prediction.launch
     env_file:
       - ../ros.env
     volumes:
@@ -10,7 +10,7 @@ services:
     network_mode: host
   control:
     image: jeguzzi/thymioid:demo_ml
-    command: roslaunch thymio_demo_ml control.launch
+    command: roslaunch --wait thymio_demo_ml control.launch
     env_file:
       - ../ros.env
     volumes:
@@ -18,7 +18,7 @@ services:
     network_mode: host
   viz:
     image: jeguzzi/thymioid:demo_ml
-    command: roslaunch thymio_demo_ml viz.launch
+    command: roslaunch --wait thymio_demo_ml viz.launch
     env_file:
       - ../ros.env
     volumes:
