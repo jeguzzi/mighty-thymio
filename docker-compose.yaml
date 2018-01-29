@@ -57,6 +57,11 @@ services:
       - ./ros.env
     volumes:
       - ./logs:/root/.ros/log:rw
+      - /var/run/dbus:/var/run/dbus
+      - /run/systemd:/run/systemd
+      - /usr/bin/systemctl:/usr/bin/systemctl
+      - /etc/systemd/system:/etc/systemd/system
+
   portainer:
     image: portainer/portainer:linux-arm
     # command: --host=unix:///var/run/docker.sock

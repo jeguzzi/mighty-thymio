@@ -39,6 +39,8 @@ RUN cd /tmp/wiringPi && ./build
 
 RUN pip install wiringpi
 
+RUN echo v2
+
 RUN cd src/thymioid && git pull
 
 
