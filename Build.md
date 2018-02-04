@@ -1,5 +1,7 @@
 # Building Instruction
 
+<img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/mighty_thymio_3.png" width="400"/>
+
 ## Buy the parts
 
 - [A Thymio robot](https://www.thymio.org)
@@ -72,6 +74,9 @@
 3. Use the included spacers and screws to the two 1x12 Lego Technic Bricks at the two opposite end of the Odroid.
 3.
 [Follow the Lego building Instructions](Lego.html) to build the rest of the chassis.
+
+<img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/step10.png" width="400"/>
+
 
 
 ## Final steps

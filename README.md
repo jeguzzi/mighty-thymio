@@ -9,7 +9,9 @@
 <sup>1</sup>Dalle Molle Institute for Artificial Intelligence (IDSIA), USI-SUPSI, Lugano, Switzerland
 <sup>2</sup>Carnegie Mellon University in Qatar, Doha, Qatar
 
-![The Mighty Thymio](https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/mighty_thymio.png | width=300)
+
+<img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/mighty_thymio.png" width="400"/>
+
 
 <i>
 Thymio is a small, inexpensive, mass-produced mobile robot with widespread use in primary and secondary education. In order to make it more versatile and effectively use it in later educational stages, including university levels, we
