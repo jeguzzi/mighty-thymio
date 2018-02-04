@@ -28,7 +28,6 @@ services:
     privileged: true
     restart: always
     command: roslaunch --wait thymioid camera.launch image_width:=640 image_height:=480 rectify:=false
-    restart: always
     env_file:
       - ./ros.env
     volumes:
@@ -64,7 +63,6 @@ services:
 
   portainer:
     image: portainer/portainer:linux-arm
-    # command: --host=unix:///var/run/docker.sock
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:

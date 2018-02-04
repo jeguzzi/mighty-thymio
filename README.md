@@ -13,10 +13,9 @@
 <img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/mighty_thymio.png" width="400"/>
 
 
-<i>
 Thymio is a small, inexpensive, mass-produced mobile robot with widespread use in primary and secondary education. In order to make it more versatile and effectively use it in later educational stages, including university levels, we
-have expanded Thymio's capabilities by adding off-the-shelf hardware and open software components. The resulting robot, that we call <b>Mighty Thymio</b>, provides additional sensing functionalities, increased computing power, networking, and full ROS integration. We present the architecture of Mighty Thymio and show its application in advanced educational activities.
-</i>
+have expanded Thymio's capabilities by adding off-the-shelf hardware and open software components. The resulting robot, that we call <i>Mighty Thymio</i>, provides additional sensing functionalities, increased computing power, networking, and full ROS integration. We present the architecture of Mighty Thymio and show its application in advanced educational activities.
+
 
 ### [Read the Paper](https://github.com/jeguzzi/mighty-thymio/blob/master/MightyThymioEAAI-18.pdf)
 
