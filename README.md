@@ -24,7 +24,7 @@ have expanded Thymio's capabilities by adding off-the-shelf hardware and open so
 ```bibtex
 @inproceedings{guzzi2018eaai,
   title={Mighty Thymio for Higher-Level Robotics Education},
-  author={Guzzi, Jérôme and Giusti, Alessandro and  Di Caro, Gianni A. and Gambardella, Luca M.},
+  author={Guzzi, Jérôme and Giusti, Alessandro and Di Caro, Gianni A. and Gambardella, Luca M.},
   booktitle={AAAI},
   year={2018}
 }
