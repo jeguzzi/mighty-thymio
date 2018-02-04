@@ -10,7 +10,7 @@
 <sup>2</sup>Carnegie Mellon University in Qatar, Doha, Qatar
 
 
-<img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/mighty_thymio.png" width="400"/>
+<img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/mighty_thymio.png" width="400"/>
 
 
 <i>
