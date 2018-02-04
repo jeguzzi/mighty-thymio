@@ -1,7 +1,7 @@
 ## The Eighth Symposium on Educational Advances in Artificial Intelligence
 
 # Mighty Thymio for Higher-Level Robotics Education
-<b>Jérôme Guzzi<sup>1</sup>, Alessandro Giusti<sup>1</sup>, Gianni A. Di Caro<sup>2</sup> and Luca Maria <sup>1</sup></b>
+<b>Jérôme Guzzi<sup>1</sup>, Alessandro Giusti<sup>1</sup>, Gianni A. Di Caro<sup>2</sup> and Luca Maria Gambardella<sup>1</sup></b>
 
 
 <sup>1</sup>Dalle Molle Institute for Artificial Intelligence (IDSIA), USI-SUPSI, Lugano, Switzerland
