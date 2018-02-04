@@ -17,24 +17,26 @@ The easiest way to get started with the Mighty Thymio is to use docker.
 
   - [Install Docker Compose](https://docs.docker.com/compose/install/)
 
-  - Install git
-    ```bash
-    sudo apt install git-all
-    ```
+3. Install git
+```bash
+sudo apt install git-all
+```
 
-3. Clone this repository
+4. Clone this repository
 ```bash
 mkdir -p docker/Mighty-Thymio
 cd docker/Mighty-Thymio
 git clone https://github.com/jeguzzi/mighty-thymio.git
 ```
-4. Modify the ROS environment
+5. Modify the ROS environment
   - Edit ros.env to setup ROS_IP or ROS_HOSTNAME
 
-4. Download and bring up the software
+6. Download and bring up the software
 ```bash
 docker-compose up
 ```
+
+## Shutdown and restart
 
 The software will automatically restart on boot. To properly shutdown the robot, either run
 ```bash
