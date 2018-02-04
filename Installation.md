@@ -1,6 +1,6 @@
 # Installation
 
-<img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/mighty_thymio_2.png" width="400"/>
+<img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/mighty_thymio_2.JPG" width="400"/>
 
 
 The easiest way to get started with the Mighty Thymio is to use docker.

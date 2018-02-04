@@ -4,20 +4,20 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<title>Lego Digital Designer</title>
-		
+
 		<style type="text/css">
-			
+
 			div
 			{
-			    font-family:arial,sans-serif; 
+			    font-family:arial,sans-serif;
 			    font-size: 11px;
 			    color:#000000;
 			}
-			
-			.header 
+
+			.header
 			{
 			    width:1024px;
-			    background-image:url('Building Instructions [Chassis]-images/Images/Header.png');
+			    background-image:url('https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Images/Header.png');
 			    background-repeat:repeat-x;
 			    background-color: #000000;
 			    height:40px;
@@ -28,20 +28,20 @@
 			{
 			    display:none;
 			}
-			
+
 			.footer
 			{
 			    font-size:10px;
 			    text-align:center;
 			    width:1024px;
 			}
-			
+
 			.nav
 			{
 			    text-align:center;
 			    width:1024px;
 			}
-			
+
 			.step
 			{
 			    display:none;
@@ -53,63 +53,63 @@
 			    width:1024px;
 			    height:620px;
 			}
-			
-			.modelParts 
-			{ 
-			    list-style-type:none; 
-			    padding:4px 0px 0px 0px; 
-			    margin:0px; 
+
+			.modelParts
+			{
+			    list-style-type:none;
+			    padding:4px 0px 0px 0px;
+			    margin:0px;
 			}
-			.modelParts ul 
-			{ 
-			    list-style-type:none; 
-			    float:left; 
-			    padding:5px 0px 0px 5px; 
-			    width:140px; 
-			    border:1px dotted gray; 
-			    margin:0px 
+			.modelParts ul
+			{
+			    list-style-type:none;
+			    float:left;
+			    padding:5px 0px 0px 5px;
+			    width:140px;
+			    border:1px dotted gray;
+			    margin:0px
 			 }
-			.modelParts ul li 
-			{ 
-			    padding:0px; 
-			    margin:0px 
+			.modelParts ul li
+			{
+			    padding:0px;
+			    margin:0px
 			}
-			.modelParts ul li img 
-			{ 
-			    padding:0px; 
-			    height:64px; 
-			    width:64px; 
-			    margin-left:15px 
+			.modelParts ul li img
+			{
+			    padding:0px;
+			    height:64px;
+			    width:64px;
+			    margin-left:15px
 			}
-			
-			.stepTextTop p 
-			{ 
-			    margin:0px; 
-			    padding:10px 0px 0px 0px;  
+
+			.stepTextTop p
+			{
+			    margin:0px;
+			    padding:10px 0px 0px 0px;
 			 }
 			.stepText p
-			{ 
-			    margin:0px; 
-			    width:30px; 
+			{
+			    margin:0px;
+			    width:30px;
 			    padding:25px 0px 0px 10px;
 			}
-            
+
             .biElement
             {
                 float:left;
                 margin:20px;
                 width:280px;
-                
+
             }
-            
+
             .stepelements
             {
                 width:1024px;
 			    height:620px;
                 overflow:auto;
             }
-            
-			
+
+
 		</style>
 
         <style type="text/css" media="print">
@@ -117,27 +117,27 @@
 			{
 			    display:none;
 			}
-			
+
 			.stepdisplay
 			{
 			    display:none;
 			}
-            
+
             .stepelements
 			{
 			    display:none;
 			}
-            
+
             .header
 			{
 			    display:none;
 			}
-            
+
             .headerPrint
 			{
 			    display:block;
 			}
-			
+
 			.step
 			{
 			    display:block;
@@ -145,18 +145,18 @@
 			    height:620px;
 			    page-break-after:always;
 			}
-            
+
             .biElement
             {
-                width:280px;                
+                width:280px;
             }
-            
+
         </style>
 
         <script language="javascript" type="text/javascript">
-            
+
             var biCurStep=0;
-            
+
             function returnTest(e) {
                 var keynum = 0;
                 if (window.event) {
@@ -165,11 +165,11 @@
                 else if (e.which) {
                     keynum = e.which
                 }
-                if (keynum == 13) 
+                if (keynum == 13)
                 {
                     try {
                         biStep(parseInt(window.document.getElementById('stepNumber').value,10));
-                    } 
+                    }
                     catch(err) {
                         biStep(0);
                     }
@@ -188,7 +188,7 @@
                         cn='stepelements';
                         id='step_elements';
                     }
-                    
+
                     if (i==step) {
                         window.document.getElementById('step_display').innerHTML=window.document.getElementById(id).innerHTML;
 						   window.document.getElementById('step_display').className=cn;
@@ -200,66 +200,66 @@
         </script>
 	</head>
 	<body onload="biStep(0)">
-        <div class="header"><img src="Building Instructions [Chassis]-images/Images/Logo.png" /></div>
-        <div class="headerPrint"><img src="Building Instructions [Chassis]-images/Images/Header_print.png" /></div>
-		
+        <div class="header"><img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Images/Logo.png" /></div>
+        <div class="headerPrint"><img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Images/Header_print.png" /></div>
+
         <div class="stepdisplay" id="step_display"></div>
 
         <div class="step" id="step_0">
             <div style="float:left;width:150px"><p>Model Name:<br /><span style="font-weight:bold">Chassis</span><br /><br />Number of Bricks: <span style="font-weight:bold">20</span></p></div>
-            <div style="float:left"><img height="600" width="800" src="Building Instructions [Chassis]-images/Step10.png" /></div>
+            <div style="float:left"><img height="600" width="800" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Step10.png" /></div>
             <div style="clear:both"></div>
         </div>
 
-			
+
         <div class="step" id="step_1">
             <div style="float:left">
                 <div class="stepTextTop"><p><span style="font-weight:bold">Step 1 of 10</span></p></div>
 				<div class="modelParts">
 					<ul>
 							<li class="stepText"><p>2 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick0.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick0.png" /></li>
 							<li class="stepText"><p>1 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick1.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick1.png" /></li>
 
 					</ul>
 				</div>
             </div>
-            <div style="float:left"><img height="600" width="800" src="Building Instructions [Chassis]-images/Step1.png" /></div>
+            <div style="float:left"><img height="600" width="800" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Step1.png" /></div>
             <div style="clear:both"></div>
-        </div>			
+        </div>
         <div class="step" id="step_2">
             <div style="float:left">
                 <div class="stepTextTop"><p><span style="font-weight:bold">Step 2 of 10</span></p></div>
 				<div class="modelParts">
 					<ul>
 							<li class="stepText"><p>1 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick2.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick2.png" /></li>
 
 					</ul>
 				</div>
             </div>
-            <div style="float:left"><img height="600" width="800" src="Building Instructions [Chassis]-images/Step2.png" /></div>
+            <div style="float:left"><img height="600" width="800" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Step2.png" /></div>
             <div style="clear:both"></div>
-        </div>			
+        </div>
         <div class="step" id="step_3">
             <div style="float:left">
                 <div class="stepTextTop"><p><span style="font-weight:bold">Step 3 of 10</span></p></div>
 				<div class="modelParts">
 					<ul>
 							<li class="stepText"><p>2 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick3.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick3.png" /></li>
 							<li class="stepText"><p>1 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick4.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick4.png" /></li>
 							<li class="stepText"><p>1 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick1.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick1.png" /></li>
 
 					</ul>
 				</div>
             </div>
-            <div style="float:left"><img height="600" width="800" src="Building Instructions [Chassis]-images/Step3.png" /></div>
+            <div style="float:left"><img height="600" width="800" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Step3.png" /></div>
             <div style="clear:both"></div>
-        </div>			
+        </div>
         <div class="step" id="step_4">
             <div style="float:left">
                 <div class="stepTextTop"><p><span style="font-weight:bold">Step 4 of 10</span></p></div>
@@ -269,27 +269,27 @@
 					</ul>
 				</div>
             </div>
-            <div style="float:left"><img height="600" width="800" src="Building Instructions [Chassis]-images/Step4.png" /></div>
+            <div style="float:left"><img height="600" width="800" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Step4.png" /></div>
             <div style="clear:both"></div>
-        </div>			
+        </div>
         <div class="step" id="step_5">
             <div style="float:left">
                 <div class="stepTextTop"><p><span style="font-weight:bold">Step 5 of 10</span></p></div>
 				<div class="modelParts">
 					<ul>
 							<li class="stepText"><p>2 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick3.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick3.png" /></li>
 							<li class="stepText"><p>1 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick4.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick4.png" /></li>
 							<li class="stepText"><p>1 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick2.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick2.png" /></li>
 
 					</ul>
 				</div>
             </div>
-            <div style="float:left"><img height="600" width="800" src="Building Instructions [Chassis]-images/Step5.png" /></div>
+            <div style="float:left"><img height="600" width="800" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Step5.png" /></div>
             <div style="clear:both"></div>
-        </div>			
+        </div>
         <div class="step" id="step_6">
             <div style="float:left">
                 <div class="stepTextTop"><p><span style="font-weight:bold">Step 6 of 10</span></p></div>
@@ -299,27 +299,27 @@
 					</ul>
 				</div>
             </div>
-            <div style="float:left"><img height="600" width="800" src="Building Instructions [Chassis]-images/Step6.png" /></div>
+            <div style="float:left"><img height="600" width="800" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Step6.png" /></div>
             <div style="clear:both"></div>
-        </div>			
+        </div>
         <div class="step" id="step_7">
             <div style="float:left">
                 <div class="stepTextTop"><p><span style="font-weight:bold">Step 7 of 10</span></p></div>
 				<div class="modelParts">
 					<ul>
 							<li class="stepText"><p>2 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick3.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick3.png" /></li>
 							<li class="stepText"><p>1 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick4.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick4.png" /></li>
 							<li class="stepText"><p>1 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick2.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick2.png" /></li>
 
 					</ul>
 				</div>
             </div>
-            <div style="float:left"><img height="600" width="800" src="Building Instructions [Chassis]-images/Step7.png" /></div>
+            <div style="float:left"><img height="600" width="800" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Step7.png" /></div>
             <div style="clear:both"></div>
-        </div>			
+        </div>
         <div class="step" id="step_8">
             <div style="float:left">
                 <div class="stepTextTop"><p><span style="font-weight:bold">Step 8 of 10</span></p></div>
@@ -329,27 +329,27 @@
 					</ul>
 				</div>
             </div>
-            <div style="float:left"><img height="600" width="800" src="Building Instructions [Chassis]-images/Step8.png" /></div>
+            <div style="float:left"><img height="600" width="800" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Step8.png" /></div>
             <div style="clear:both"></div>
-        </div>			
+        </div>
         <div class="step" id="step_9">
             <div style="float:left">
                 <div class="stepTextTop"><p><span style="font-weight:bold">Step 9 of 10</span></p></div>
 				<div class="modelParts">
 					<ul>
 							<li class="stepText"><p>2 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick3.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick3.png" /></li>
 							<li class="stepText"><p>1 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick4.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick4.png" /></li>
 							<li class="stepText"><p>1 x</p></li>
-							<li><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick2.png" /></li>
+							<li><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick2.png" /></li>
 
 					</ul>
 				</div>
             </div>
-            <div style="float:left"><img height="600" width="800" src="Building Instructions [Chassis]-images/Step9.png" /></div>
+            <div style="float:left"><img height="600" width="800" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Step9.png" /></div>
             <div style="clear:both"></div>
-        </div>			
+        </div>
         <div class="step" id="step_10">
             <div style="float:left">
                 <div class="stepTextTop"><p><span style="font-weight:bold">Step 10 of 10</span></p></div>
@@ -359,7 +359,7 @@
 					</ul>
 				</div>
             </div>
-            <div style="float:left"><img height="600" width="800" src="Building Instructions [Chassis]-images/Step10.png" /></div>
+            <div style="float:left"><img height="600" width="800" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Step10.png" /></div>
             <div style="clear:both"></div>
         </div>
 
@@ -368,57 +368,57 @@
                     <table border="0">
                         <tr style="vertical-align:middle">
 					        <td>8&nbsp;x</td>
-					        <td><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick3.png" /></td>
+					        <td><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick3.png" /></td>
 					        <td>300301</td>
 					        <td>BRICK 2X2 - White</td>
 				        </tr>
                     </table>
                 </div>
-                
+
 				<div class="biElement">
                     <table border="0">
                         <tr style="vertical-align:middle">
 					        <td>2&nbsp;x</td>
-					        <td><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick0.png" /></td>
+					        <td><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick0.png" /></td>
 					        <td>389524</td>
 					        <td>TECHNIC BRICK 1X12, Ø4,9 - Bright Yellow</td>
 				        </tr>
                     </table>
                 </div>
-                
+
 				<div class="biElement">
                     <table border="0">
                         <tr style="vertical-align:middle">
 					        <td>4&nbsp;x</td>
-					        <td><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick4.png" /></td>
+					        <td><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick4.png" /></td>
 					        <td>302201</td>
 					        <td>PLATE 2X2 - White</td>
 				        </tr>
                     </table>
                 </div>
-                
+
 				<div class="biElement">
                     <table border="0">
                         <tr style="vertical-align:middle">
 					        <td>4&nbsp;x</td>
-					        <td><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick2.png" /></td>
+					        <td><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick2.png" /></td>
 					        <td>302101</td>
 					        <td>PLATE 2X3 - White</td>
 				        </tr>
                     </table>
                 </div>
-                
+
 				<div class="biElement">
                     <table border="0">
                         <tr style="vertical-align:middle">
 					        <td>2&nbsp;x</td>
-					        <td><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick1.png" /></td>
+					        <td><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick1.png" /></td>
 					        <td>303423</td>
 					        <td>PLATE 2X8 - Bright Blue</td>
 				        </tr>
                     </table>
                 </div>
-                
+
 
             <div style="clear:both"></div>
         </div>
@@ -426,16 +426,16 @@
         <div id="nav"  class="nav">
             <table style="margin:0 auto" border="0">
                 <tr>
-                    <td><a onclick="biStep(0);" href="#"><img border="0" alt="First" src="Building Instructions [Chassis]-images/Images/Arrow_First.png" /></a></td>
-                    <td><a onclick="biStep(biCurStep-1);" href="#"><img border="0" alt="First" src="Building Instructions [Chassis]-images/Images/Arrow_Backward.png" /></a></td>
+                    <td><a onclick="biStep(0);" href="#"><img border="0" alt="First" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Images/Arrow_First.png" /></a></td>
+                    <td><a onclick="biStep(biCurStep-1);" href="#"><img border="0" alt="First" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Images/Arrow_Backward.png" /></a></td>
                     <td><input id="stepNumber" onkeydown="returnTest(window.event)" type="text" style="text-align:center;width:56px;height:28px;border:1px solid #cccccc;font-size:14px;font-weight:bold" /></td>
-                    <td><a onclick="biStep(biCurStep+1);" href="#"><img border="0" alt="First" src="Building Instructions [Chassis]-images/Images/Arrow_Forward.png" /></a></td>
-                    <td><a onclick="biStep(10+1);" href="#"><img border="0" alt="First" src="Building Instructions [Chassis]-images/Images/Arrow_Last.png" /></a></td>
+                    <td><a onclick="biStep(biCurStep+1);" href="#"><img border="0" alt="First" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Images/Arrow_Forward.png" /></a></td>
+                    <td><a onclick="biStep(10+1);" href="#"><img border="0" alt="First" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Images/Arrow_Last.png" /></a></td>
                     <td style="width:40px">&nbsp;</td>
-                    <td><a onclick="window.print();return false;" href="#"><img border="0" alt="Print" src="Building Instructions [Chassis]-images/Images/PrintIcon.png" /></a></td>
+                    <td><a onclick="window.print();return false;" href="#"><img border="0" alt="Print" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Images/PrintIcon.png" /></a></td>
                 </tr>
             </table>
-        </div> 
+        </div>
 		<div style="clear:both;">&nbsp;</div>
 		<div class="footer">© 2012 The LEGO Group. All rights reserved.<br />
 Use of the LEGO Digital Designer html print tool, signifies your agreement to the terms of use.</div>

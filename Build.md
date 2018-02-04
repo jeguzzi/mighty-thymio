@@ -1,6 +1,6 @@
 # Building Instruction
 
-<img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/mighty_thymio_3.png" width="400"/>
+<img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/mighty_thymio_3.JPG" width="400"/>
 
 ## Buy the parts
 
@@ -20,7 +20,7 @@
                   <table border="0">
                       <tbody><tr style="vertical-align:middle">
                 <td>8&nbsp;x</td>
-                <td><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick3.png"></td>
+                <td><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick3.png"></td>
                 <td>300301</td>
                 <td>BRICK 2X2 - White</td>
               </tr>
@@ -30,7 +30,7 @@
                   <table border="0">
                       <tbody><tr style="vertical-align:middle">
                 <td>2&nbsp;x</td>
-                <td><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick0.png"></td>
+                <td><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick0.png"></td>
                 <td>389524</td>
                 <td>TECHNIC BRICK 1X12, Ø4,9 - Bright Yellow</td>
               </tr>
@@ -40,7 +40,7 @@
                   <table border="0">
                       <tbody><tr style="vertical-align:middle">
                 <td>4&nbsp;x</td>
-                <td><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick4.png"></td>
+                <td><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick4.png"></td>
                 <td>302201</td>
                 <td>PLATE 2X2 - White</td>
               </tr>
@@ -50,7 +50,7 @@
                   <table border="0">
                       <tbody><tr style="vertical-align:middle">
                 <td>4&nbsp;x</td>
-                <td><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick2.png"></td>
+                <td><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick2.png"></td>
                 <td>302101</td>
                 <td>PLATE 2X3 - White</td>
               </tr>
@@ -60,7 +60,7 @@
                   <table border="0">
                       <tbody><tr style="vertical-align:middle">
                 <td>2&nbsp;x</td>
-                <td><img height="64" width="64" src="Building Instructions [Chassis]-images/Brick1.png"></td>
+                <td><img height="64" width="64" src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Brick1.png"></td>
                 <td>303423</td>
                 <td>PLATE 2X8 - Bright Blue</td>
               </tr>
@@ -70,18 +70,18 @@
 
 ## Mount the chassis
 
-2. Mount the UPS Board on top of the Odroid
-3. Use the included spacers and screws to the two 1x12 Lego Technic Bricks at the two opposite end of the Odroid.
-3.
-[Follow the Lego building Instructions](Lego.html) to build the rest of the chassis.
+  1. Mount the UPS Board on top of the Odroid
+  2. Use the included spacers and screws to the two 1x12 Lego Technic Bricks at the two opposite end of the Odroid.
+  3. [Use the Lego bricks](http://htmlpreview.github.com/?https://github.com/jeguzzi/mighty-thymio/blob/master/Lego.html) to build the rest of the chassis.
 
-<img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/step10.png" width="400"/>
+<img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Step10.png" width="400"/>
+  4. Mount the chassis with the Odroid on top of the Thymio
 
 
 
 ## Final steps
 
-1. Plug-in the camera and fix in on top of the Li-Po battery
-2. Insert the battery pack in the chassis slot and connect it to the UPS battery.
-3. Plug-in the WiFi dongle
-4. Connect the Odroid and the Thymio with the micro USB cable.
+  1. Plug-in the camera and fix in on top of the Li-Po battery
+  2. Insert the battery pack in the chassis slot and connect it to the UPS battery.
+  3. Plug-in the WiFi dongle
+  4. Connect the Odroid and the Thymio with the micro USB cable.
