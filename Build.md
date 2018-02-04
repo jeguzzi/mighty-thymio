@@ -72,7 +72,7 @@
 
   1. Mount the UPS Board on top of the Odroid
   2. Use the included spacers and screws to the two 1x12 Lego Technic Bricks at the two opposite end of the Odroid.
-  3. [Use the Lego bricks](http://htmlpreview.github.com/?https://github.com/jeguzzi/mighty-thymio/blob/master/Lego.html) to build the rest of the chassis.
+  3. [Use the Lego bricks](https://htmlpreview.github.io/?https://github.com/jeguzzi/mighty-thymio/blob/master/Lego.html#) to build the rest of the chassis.
 
 <img src="https://raw.githubusercontent.com/jeguzzi/mighty-thymio/master/images/Lego/Step10.png" width="400"/>
   4. Mount the chassis with the Odroid on top of the Thymio
