@@ -11,7 +11,7 @@
 - [Odroid UPS](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G146068525665): a Li-Po battery that provides power when swapping power packs
 - [A USB web camera](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G137517754892) fixed by a tiltable clap
 - [A Wi-Fi dongle](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G137447734369) that provides wireless networking.
-- A micro USB short cable (5-10 cm)
+- A short micro USB cable (5-10 cm)
 - [A USB-A plug to ODROID connector plug 2.5 mm/0.8 mm](https://www.pollin.de/p/usb-stromversorgungskabel-2-5-0-8-mm-562362)
 - Lego parts to build the chassis (colors are by your choices :-)):
 

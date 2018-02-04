@@ -48,6 +48,7 @@ We also include the Docker Compose file to launch the demo
 
 <b>
 Learning an Image-based Obstacle Detector With Automatic Acquisition of Training Data, <i>Stefano Toniolo, Jérôme Guzzi, Luca Maria Gambardella, Alessandro Giusti</i>, AAAI-18.
+</b>
 
 ```bash
 docker-compose -f demo/docker-compose.yml up
