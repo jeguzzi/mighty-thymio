@@ -4,6 +4,8 @@
 
 export LC_ALL=C
 
+printf "\n****** Installing Docker ****** \n"
+
 apt-get update
 apt-get install  -y \
    apt-transport-https \
@@ -29,7 +31,20 @@ apt install python3-pip
 pip3 install --upgrade pip
 pip3 install docker-compose
 
+printf "\n****** Docker installation done ******\n"
+
+# Clone repo
+
+printf "\n****** Cloning the repository ****** \n"
+
+mkdir -p /root/docker
+git clone https://github.com/jeguzzi/mighty-thymio.git /root/docker/mighty-thymio
+
+cd /root/docker/mighty-thymio/script
+
 #https://wiki.odroid.com/accessory/connectivity/wifi/wlan_ap
+
+printf "\n****** Install hostapd and dnsmasq ****** \n"
 
 apt install --reinstall dnsmasq
 apt install hostapd iptables wpasupplicant
@@ -39,12 +54,7 @@ cp ./hostapd /usr/sbin/hostapd
 
 ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
 
-mkdir -p /root/docker
-git clone https://github.com/jeguzzi/mighty-thymio.git /root/docker/mighty-thymio
-
-cd /root/docker/mighty-thymio/script
-
-echo "Installation DONE, now run the setup script"
+printf "\n****** Installation done, now run the config script ******\n"
 
 read -e -p "Enter the robot name: " -i "thymio" name
 read -e -p "Enter the wifi password: " password
@@ -65,5 +75,6 @@ do
   aps+=$ssid" "$ap_password
 done; echo $aps
 
-
 python3 setup.py --name $name --password $password --channel $channel --access_points $aps
+
+printf "\n****** Configuration done ******\n"
