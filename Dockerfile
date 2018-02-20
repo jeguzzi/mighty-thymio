@@ -27,5 +27,7 @@ RUN cd /tmp/wiringPi && ./build
 
 RUN pip install netifaces wiringpi
 
+RUN pip install watchdog
+
 RUN git clone https://github.com/jeguzzi/thymioid.git src/thymioid
 RUN catkin build
