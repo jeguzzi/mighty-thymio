@@ -60,7 +60,7 @@ services:
       - /run/systemd:/run/systemd
       - /usr/bin/systemctl:/usr/bin/systemctl
       - /etc/systemd/system:/etc/systemd/system
-      - /run/network/ifstate.wlan0:/run/network/ifstate.wlan0:r
+      - /run/network/ifstate.wlan0:/run/network/ifstate.wlan0
       - ./wlan:/wlan:rw
   portainer:
     image: portainer/portainer:linux-arm
