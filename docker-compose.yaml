@@ -60,7 +60,7 @@ services:
       - /run/systemd:/run/systemd
       - /usr/bin/systemctl:/usr/bin/systemctl
       - /etc/systemd/system:/etc/systemd/system
-
+      - ./wlan:/wlan
   portainer:
     image: portainer/portainer:linux-arm
     volumes:

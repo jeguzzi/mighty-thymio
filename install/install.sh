@@ -80,3 +80,5 @@ python3 setup.py --name $name --password $password --channel $channel --access_p
 printf "\n****** Configuration done ******\n"
 
 cd /root/docker/mighty-thymio
+
+mkfifo wlan
