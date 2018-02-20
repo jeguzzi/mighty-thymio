@@ -1,0 +1,13 @@
+allow-hotplug wlan0
+#access point
+iface wlan0 inet static
+  address 192.168.168.1
+  netmask 255.255.255.0
+  #gateway 192.168.168.1
+  nameserver 192.168.168.1
+  dns-nameservers 192.168.168.1
+  # wireless-mode Master
+  pre-up iptables-restore < /etc/iptables.ipv4.nat
+  post-down iptables -F
+  up systemctl start dnsmasq hostapd
+  down systemctl stop dnsmasq hostapd

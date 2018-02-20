@@ -1,0 +1,3 @@
+DAEMON_CONF="/etc/hostapd/hostapd.conf"
+
+DAEMON_OPTS="-B"
