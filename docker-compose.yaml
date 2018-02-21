@@ -65,11 +65,12 @@ services:
   jupyter:
     image: jeguzzi/thymioid
     network_mode: host
-    command: jupyter notebook --allow-root --NotebookApp.token='' --port=8888 --no-browser --notebook-dir=/root/docker/mighty-thymio/notebook --ip=0.0.0.0
+    command: jupyter notebook --allow-root --NotebookApp.token='' --port=8888 --no-browser --notebook-dir=/notebook --ip=0.0.0.0
     env_file:
       - ./ros.env
     volumes:
       - ./logs:/root/.ros/log:rw
+      - ./notebook:/notebook:rw
   portainer:
     image: portainer/portainer:linux-arm
     volumes:
