@@ -4,23 +4,23 @@ services:
     image: jeguzzi/thymioid:demo_ml
     command: roslaunch --wait thymio_demo_ml prediction.launch
     env_file:
-      - ../ros.env
+      - ../../ros.env
     volumes:
-      - ../logs:/root/.ros/log:rw
+      - ../../logs:/root/.ros/log:rw
     network_mode: host
   control:
     image: jeguzzi/thymioid:demo_ml
     command: roslaunch --wait thymio_demo_ml control.launch
     env_file:
-      - ../ros.env
+      - ../../ros.env
     volumes:
-      - ../logs:/root/.ros/log:rw
+      - ../../logs:/root/.ros/log:rw
     network_mode: host
   viz:
     image: jeguzzi/thymioid:demo_ml
     command: roslaunch --wait thymio_demo_ml viz.launch
     env_file:
-      - ../ros.env
+      - ../../ros.env
     volumes:
-      - ../logs:/root/.ros/log:rw
+      - ../../logs:/root/.ros/log:rw
     network_mode: host
