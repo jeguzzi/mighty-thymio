@@ -25,9 +25,7 @@ RUN apt-get update && apt-get install -y \
 RUN git clone https://github.com/hardkernel/wiringPi.git /tmp/wiringPi
 RUN cd /tmp/wiringPi && ./build
 
-RUN pip install netifaces wiringpi
-
-RUN pip install watchdog
+RUN pip install ipython==5.5 netifaces wiringpi watchdog jupyter
 
 RUN git clone https://github.com/jeguzzi/thymioid.git src/thymioid
 RUN catkin build

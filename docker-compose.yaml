@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   core:
     image: jeguzzi/ros:armhf-kinetic-ros-dev
@@ -62,6 +62,14 @@ services:
       - /etc/systemd/system:/etc/systemd/system
       - /run/network/ifstate.wlan0:/run/network/ifstate.wlan0
       - ./wlan:/wlan:rw
+  jupyter:
+    image: jeguzzi/thymioid
+    network_mode: host
+    command: jupyter notebook --allow-root --NotebookApp.token='' --port=8888 --no-browser --notebook-dir=/root/docker/mighty-thymio/notebook --ip=0.0.0.0
+    env_file:
+      - ./ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
   portainer:
     image: portainer/portainer:linux-arm
     volumes:
