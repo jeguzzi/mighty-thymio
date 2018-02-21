@@ -89,3 +89,9 @@ services:
     ports:
       - 9000:9000
     restart: always
+  aseba:
+    image: jeguzzi/thymioid
+    command: asebaswitch "ser:device=/dev/ttyACM0"
+    privileged: true
+    ports:
+      - 3333:3333
