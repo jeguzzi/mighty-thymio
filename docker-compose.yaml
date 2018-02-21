@@ -62,6 +62,17 @@ services:
       - /etc/systemd/system:/etc/systemd/system
       - /run/network/ifstate.wlan0:/run/network/ifstate.wlan0
       - ./wlan:/wlan:rw
+  demos:
+    image: jeguzzi/thymioid
+    network_mode: host
+    privileged: true
+    command: roslaunch --wait thymioid demo_menu.launch
+    restart: always
+    env_file:
+      - ./ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+      - /var/run/docker.sock:/var/run/docker.sock
   jupyter:
     image: jeguzzi/thymioid
     network_mode: host
