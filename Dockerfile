@@ -27,5 +27,7 @@ RUN cd /tmp/wiringPi && ./build
 
 RUN pip install ipython==5.5 netifaces wiringpi watchdog jupyter
 
+RUN pip install numpy matplotlib
+
 RUN git clone https://github.com/jeguzzi/thymioid.git src/thymioid
 RUN catkin build
