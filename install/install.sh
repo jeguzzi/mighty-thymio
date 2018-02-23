@@ -81,4 +81,4 @@ printf "\n****** Configuration done ******\n"
 
 cd /root/docker/mighty-thymio
 
-mkfifo wlan
+mkfifo /var/run/wlan
