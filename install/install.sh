@@ -7,6 +7,11 @@ export LC_ALL=C
 printf "\n****** Installing Docker ****** \n"
 
 apt-get update
+
+apt-get install linux-image-c1
+
+apt-get upgrade
+
 apt-get install  -y \
    apt-transport-https \
    ca-certificates \
