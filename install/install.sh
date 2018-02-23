@@ -10,7 +10,7 @@ apt-get update
 
 # apt-get install linux-image-c1
 
-apt-get upgrade
+# apt-get upgrade
 
 apt-get install  -y \
    apt-transport-https \
