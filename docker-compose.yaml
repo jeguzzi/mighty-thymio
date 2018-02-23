@@ -73,7 +73,7 @@ services:
     volumes:
       - ./logs:/root/.ros/log:rw
       - /var/run/docker.sock:/var/run/docker.sock
-  jupyter:
+  notebook:
     image: jeguzzi/thymioid
     network_mode: host
     command: jupyter notebook --allow-root --NotebookApp.token='' --port=8888 --no-browser --notebook-dir=/notebook --ip=0.0.0.0
@@ -83,6 +83,7 @@ services:
       - ./logs:/root/.ros/log:rw
       - ./notebook:/notebook:rw
   portainer:
+    command: --no-auth
     image: portainer/portainer:linux-arm
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
