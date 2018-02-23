@@ -8,7 +8,7 @@ printf "\n****** Installing Docker ****** \n"
 
 apt-get update
 
-apt-get install linux-image-c1
+# apt-get install linux-image-c1
 
 apt-get upgrade
 
