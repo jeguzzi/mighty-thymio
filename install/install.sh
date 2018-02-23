@@ -29,10 +29,11 @@ add-apt-repository \
 apt update
 apt install docker-ce -y
 apt remove apparmor
+apt autoremove
 
 # https://docs.docker.com/compose/install/#install-compose
 
-apt install python3-pip
+apt install python3-pip -y
 pip3 install --upgrade pip
 pip3 install docker-compose
 
@@ -51,8 +52,8 @@ cd /root/docker/mighty-thymio/script
 
 printf "\n****** Install hostapd and dnsmasq ****** \n"
 
-apt install --reinstall dnsmasq
-apt install hostapd iptables wpasupplicant
+apt install --reinstall dnsmasq -y
+apt install hostapd iptables wpasupplicant -y
 
 cp /usr/sbin/hostapd /usr/sbin/hostapd.back
 cp ./hostapd /usr/sbin/hostapd
