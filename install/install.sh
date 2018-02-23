@@ -33,6 +33,8 @@ apt autoremove
 
 # https://docs.docker.com/compose/install/#install-compose
 
+printf "\n****** Install docker compose ******\n"
+
 apt install python3-pip -y
 pip3 install --upgrade pip
 pip3 install docker-compose
