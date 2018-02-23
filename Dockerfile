@@ -29,5 +29,11 @@ RUN pip install ipython==5.5 netifaces wiringpi watchdog jupyter
 
 RUN pip install numpy matplotlib
 
+RUN pip install docker
+
+RUN apt-get update && apt-get install -y \
+    ros-kinetic-ar-track-alvar \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN git clone https://github.com/jeguzzi/thymioid.git src/thymioid
 RUN catkin build
