@@ -28,8 +28,8 @@ add-apt-repository \
 
 apt update
 apt install docker-ce -y || :
-apt remove apparmor
-apt autoremove -y
+yes | apt remove apparmor
+yes | apt autoremove
 
 # https://docs.docker.com/compose/install/#install-compose
 
