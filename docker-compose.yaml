@@ -62,6 +62,8 @@ services:
       - /etc/systemd/system:/etc/systemd/system
       - /run/network/ifstate.wlan0:/run/network/ifstate.wlan0
       - ./wlan:/wlan:rw
+    depends_on:
+      - robot
   demos:
     image: jeguzzi/thymioid
     network_mode: host
