@@ -66,7 +66,7 @@ services:
     image: jeguzzi/thymioid
     network_mode: host
     privileged: true
-    command: roslaunch --wait thymioid demo_menu.launch demos:=[ml, markers]
+    command: roslaunch --wait thymioid demo_menu.launch demos:=[ml,markers]
     restart: always
     env_file:
       - ./ros.env
