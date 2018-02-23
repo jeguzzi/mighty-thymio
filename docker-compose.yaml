@@ -83,6 +83,7 @@ services:
       - ./logs:/root/.ros/log:rw
       - ./notebook:/notebook:rw
   portainer:
+    command: --no-auth
     image: portainer/portainer:linux-arm
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -91,7 +92,8 @@ services:
     restart: always
   aseba:
     image: jeguzzi/thymioid
-    command: asebaswitch "ser:device=/dev/ttyACM0"
+    command: /root/catkin_ws/devel/lib/aseba/asebaswitch "ser:device=/dev/ttyACM0"
     privileged: true
+    # restart: none
     ports:
-      - 3333:3333
+      - 33333:33333
