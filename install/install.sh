@@ -27,9 +27,9 @@ add-apt-repository \
    stable"
 
 apt update
-apt install docker-ce -y
+apt install docker-ce -y || :
 apt remove apparmor
-apt autoremove
+apt autoremove -y
 
 # https://docs.docker.com/compose/install/#install-compose
 
@@ -48,7 +48,7 @@ printf "\n****** Cloning the repository ****** \n"
 mkdir -p /root/docker
 git clone https://github.com/jeguzzi/mighty-thymio.git /root/docker/mighty-thymio
 
-cd /root/docker/mighty-thymio/script
+cd /root/docker/mighty-thymio/install
 
 #https://wiki.odroid.com/accessory/connectivity/wifi/wlan_ap
 
