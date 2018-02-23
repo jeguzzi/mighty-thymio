@@ -1,6 +1,6 @@
 version: '2'
 services:
-  predictor:
+  markers:
     image: jeguzzi/thymioid
     command: roslaunch --wait thymioid ar_cubes.launch
     env_file:
