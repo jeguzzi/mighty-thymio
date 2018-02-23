@@ -54,7 +54,7 @@ cp ./hostapd /usr/sbin/hostapd
 
 ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
 
-mkfifo /var/run/wlan
+
 
 # Clone repo
 
@@ -63,7 +63,8 @@ printf "\n****** Cloning the repository ****** \n"
 mkdir -p /root/docker
 git clone https://github.com/jeguzzi/mighty-thymio.git /root/docker/mighty-thymio
 
-
-printf "\n****** Installation done, now run the config script ******\n"
+mkfifo /root/docker/mighty-thymio/wlan
 
 cd /root/docker/mighty-thymio/install
+
+printf "\n****** Installation done, now run the config script ******\n"

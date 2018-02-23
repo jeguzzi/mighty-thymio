@@ -61,7 +61,7 @@ services:
       - /usr/bin/systemctl:/usr/bin/systemctl
       - /etc/systemd/system:/etc/systemd/system
       - /run/network/ifstate.wlan0:/run/network/ifstate.wlan0
-      - /var/run/wlan:/wlan:rw
+      - ./wlan:/wlan:rw
   demos:
     image: jeguzzi/thymioid
     network_mode: host

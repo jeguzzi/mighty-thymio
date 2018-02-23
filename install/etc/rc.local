@@ -13,5 +13,5 @@
 
 
 if [ -f /aafirstboot ]; then /aafirstboot start ; fi
-/bin/bash /root/docker/mighty-thymio/wlan.sh <> /var/run/wlan
+/bin/bash /root/docker/mighty-thymio/wlan.sh <> /root/docker/mighty-thymio/wlan
 exit 0
