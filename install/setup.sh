@@ -21,4 +21,6 @@ done; echo $aps
 
 python3 setup.py --name $name --password $password --channel $channel --access_points $aps
 
+chmod +x /etc/rc.local
+
 printf "\n****** Configuration done ******\n"
