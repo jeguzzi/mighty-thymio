@@ -53,8 +53,10 @@ printf "\n****** Create wlan FIFO ****** \n"
 
 mkfifo /root/docker/mighty-thymio/wlan
 
-chmod +x wlan.sh
+chmod +x ../wlan.sh
 
 printf "\n****** Run the config script ******\n"
 
 source setup.sh
+
+cd ..
