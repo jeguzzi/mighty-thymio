@@ -30,7 +30,7 @@ The easiest way to get started with the Mighty Thymio is to use docker.
 
 3. Run the install script
     ```bash
-    cd /root/dockermighty-thymio/install
+    cd /root/docker/mighty-thymio/install
     source install_local.sh
     ```
 
