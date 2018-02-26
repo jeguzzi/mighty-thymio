@@ -57,5 +57,5 @@ Learning an Image-based Obstacle Detector With Automatic Acquisition of Training
 </b>
 
 ```bash
-docker-compose -f demo/docker-compose.yml up
+docker-compose -f demo/ml/docker-compose.yml up
 ```
