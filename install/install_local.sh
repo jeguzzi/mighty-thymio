@@ -57,6 +57,4 @@ chmod +x wlan.sh
 
 printf "\n****** Run the config script ******\n"
 
-cd install
-
 source setup.sh
