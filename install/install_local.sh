@@ -49,11 +49,13 @@ chmod +x /usr/sbin/hostapd
 
 ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
 
-printf "\n****** Create wlan FIFO ****** \n"
+printf "\n****** Create wlan  and shutdown FIFOs ****** \n"
 
 mkfifo /root/docker/mighty-thymio/wlan
+mkfifo /root/docker/mighty-thymio/shutdown
 
 chmod +x ../wlan.sh
+chmod +x ../shutdown.sh
 
 printf "\n****** Run the config script ******\n"
 

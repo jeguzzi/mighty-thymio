@@ -3,10 +3,7 @@ services:
   shutdown:
     image: jeguzzi/ros:armhf-kinetic-ros-dev
     network_mode: host
-    command: shutdown now
+    command: echo 'shudown\n' > /shutdown
     privileged: true
     volumes:
-      - /var/run/dbus:/var/run/dbus
-      - /run/systemd:/run/systemd
-      - /usr/bin/systemctl:/usr/bin/systemctl
-      - /etc/systemd/system:/etc/systemd/system
+      - /root/docker/mighty-thymio/shutdown:/shutdown:rw

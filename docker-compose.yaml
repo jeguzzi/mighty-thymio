@@ -56,12 +56,9 @@ services:
       - ./ros.env
     volumes:
       - ./logs:/root/.ros/log:rw
-      - /var/run/dbus:/var/run/dbus
-      - /run/systemd:/run/systemd
-      - /usr/bin/systemctl:/usr/bin/systemctl
-      - /etc/systemd/system:/etc/systemd/system
       - /run/network/ifstate.wlan0:/run/network/ifstate.wlan0
       - ./wlan:/wlan:rw
+      - ./shutdown:/shutdown:rw
     depends_on:
       - robot
   demos:
