@@ -3,7 +3,7 @@ services:
   shutdown:
     image: jeguzzi/ros:armhf-kinetic-ros-dev
     network_mode: host
-    command: /bin/bash -c "echo 'shutdown\n' > /shutdown"
+    command: /bin/bash -c "echo -e 'shutdown\n' > /shutdown"
     privileged: true
     volumes:
       - /root/docker/mighty-thymio/shutdown:/shutdown:rw
