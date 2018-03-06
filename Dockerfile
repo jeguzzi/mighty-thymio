@@ -24,7 +24,7 @@ RUN git clone https://github.com/hardkernel/WiringPi2-Python.git /tmp/WiringPi2-
 
 RUN cd /tmp/WiringPi2-Python && \
     swig3.0 -python -threads wiringpi.i && \
-    python setup.py build install && \
+    python2 setup.py build install && \
     cd / && rm -r /tmp/WiringPi2-Python
 
 RUN pip install ipython==5.5 watchdog jupyter numpy matplotlib docker
