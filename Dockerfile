@@ -20,14 +20,10 @@ RUN apt-get update && apt-get install -y \
 RUN git clone https://github.com/hardkernel/WiringPi2-Python.git /tmp/WiringPi2-Python && \
     cd /tmp/WiringPi2-Python && \
     git submodule init && \
-    git submodule update
-
-RUN cd /tmp/WiringPi2-Python && ./build.sh
-
-# RUN cd /tmp/WiringPi2-Python && \
-#     swig3.0 -python -threads wiringpi.i && \
-#     python2 setup.py build install && \
-#     cd / && rm -r /tmp/WiringPi2-Python
+    git submodule update && \
+    swig3.0 -python -threads wiringpi.i && \
+    python2 setup.py build install && \
+    cd / && rm -r /tmp/WiringPi2-Python
 
 RUN pip install ipython==5.5 watchdog jupyter numpy matplotlib docker
 
