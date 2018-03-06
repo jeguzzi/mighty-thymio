@@ -22,7 +22,8 @@ RUN git clone https://github.com/hardkernel/WiringPi2-Python.git /tmp/WiringPi2-
     git submodule init && \
     git submodule update
 
-RUN swig3.0 -python -threads wiringpi.i && \
+RUN cd /tmp/WiringPi2-Python && \
+    swig3.0 -python -threads wiringpi.i && \
     python setup.py build install && \
     cd / && rm -r /tmp/WiringPi2-Python
 
