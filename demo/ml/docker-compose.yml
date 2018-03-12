@@ -6,7 +6,7 @@ services:
     env_file:
       - ../../ros.env
     environment:
-      - ROS_NAMESPACE=${HOSTNAME}
+      - "ROS_NAMESPACE=${HOSTNAME}"
     volumes:
       - ../../logs:/root/.ros/log:rw
     network_mode: host
@@ -16,7 +16,7 @@ services:
     env_file:
       - ../../ros.env
     environment:
-      - ROS_NAMESPACE=${HOSTNAME}
+      - "ROS_NAMESPACE=${HOSTNAME}"
     volumes:
       - ../../logs:/root/.ros/log:rw
     network_mode: host
@@ -26,7 +26,7 @@ services:
     env_file:
       - ../../ros.env
     environment:
-      - ROS_NAMESPACE=${HOSTNAME}
+      - "ROS_NAMESPACE=${HOSTNAME}"
     volumes:
       - ../../logs:/root/.ros/log:rw
     network_mode: host
