@@ -5,8 +5,6 @@ services:
     command: roslaunch --wait thymio_demo_ml prediction.launch
     env_file:
       - ../../ros.env
-    environment:
-      - "ROS_NAMESPACE=${HOSTNAME}"
     volumes:
       - ../../logs:/root/.ros/log:rw
     network_mode: host
@@ -15,8 +13,6 @@ services:
     command: roslaunch --wait thymio_demo_ml control.launch
     env_file:
       - ../../ros.env
-    environment:
-      - "ROS_NAMESPACE=${HOSTNAME}"
     volumes:
       - ../../logs:/root/.ros/log:rw
     network_mode: host
@@ -25,8 +21,6 @@ services:
     command: roslaunch --wait thymio_demo_ml viz.launch input_image:=camera/image_raw
     env_file:
       - ../../ros.env
-    environment:
-      - "ROS_NAMESPACE=${HOSTNAME}"
     volumes:
       - ../../logs:/root/.ros/log:rw
     network_mode: host
