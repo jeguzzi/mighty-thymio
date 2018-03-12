@@ -57,6 +57,10 @@ mkfifo /root/docker/mighty-thymio/shutdown
 chmod +x ../wlan.sh
 chmod +x ../shutdown.sh
 
+printf "\n****** Install ZRAM ******\n"
+
+apt install zram-config
+
 printf "\n****** Run the config script ******\n"
 
 source setup.sh

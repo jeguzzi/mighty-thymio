@@ -12,6 +12,7 @@ wlan_config_template = """iface {wlan_ssid} inet dhcp
 
 ros_config_template = """ROS_MASTER_URI=http://localhost:11311
 ROS_HOSTNAME={hostname}
+HOSTNAME={hostname}
 """
 
 _NO_BACKUP = ['./etc/network/interfaces.d']
