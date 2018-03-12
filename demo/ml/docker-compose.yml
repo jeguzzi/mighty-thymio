@@ -8,6 +8,7 @@ services:
     volumes:
       - ../../logs:/root/.ros/log:rw
     network_mode: host
+    restart: $RESTART
   control:
     image: jeguzzi/thymioid:demo_ml
     command: roslaunch --wait thymio_demo_ml control.launch
@@ -16,6 +17,7 @@ services:
     volumes:
       - ../../logs:/root/.ros/log:rw
     network_mode: host
+    restart: $RESTART
   viz:
     image: jeguzzi/thymioid:demo_ml
     command: roslaunch --wait thymio_demo_ml viz.launch input_image:=camera/image_raw
@@ -24,3 +26,4 @@ services:
     volumes:
       - ../../logs:/root/.ros/log:rw
     network_mode: host
+    restart: $RESTART
