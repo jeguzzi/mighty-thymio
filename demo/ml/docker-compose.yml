@@ -2,25 +2,31 @@ version: '2'
 services:
   predictor:
     image: jeguzzi/thymioid:demo_ml
-    command: ROS_NAMESPACE=$HOSTNAME roslaunch --wait thymio_demo_ml prediction.launch
+    command: roslaunch --wait thymio_demo_ml prediction.launch
     env_file:
       - ../../ros.env
+    environment:
+      - ROS_NAMESPACE=$HOSTNAME
     volumes:
       - ../../logs:/root/.ros/log:rw
     network_mode: host
   control:
     image: jeguzzi/thymioid:demo_ml
-    command: ROS_NAMESPACE=$HOSTNAME roslaunch --wait thymio_demo_ml control.launch
+    command: roslaunch --wait thymio_demo_ml control.launch
     env_file:
       - ../../ros.env
+    environment:
+      - ROS_NAMESPACE=$HOSTNAME
     volumes:
       - ../../logs:/root/.ros/log:rw
     network_mode: host
   viz:
     image: jeguzzi/thymioid:demo_ml
-    command: ROS_NAMESPACE=$HOSTNAME roslaunch --wait thymio_demo_ml viz.launch input_image:=camera/image_raw
+    command: roslaunch --wait thymio_demo_ml viz.launch input_image:=camera/image_raw
     env_file:
       - ../../ros.env
+    environment:
+      - ROS_NAMESPACE=$HOSTNAME
     volumes:
       - ../../logs:/root/.ros/log:rw
     network_mode: host
