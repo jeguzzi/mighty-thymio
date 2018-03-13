@@ -20,6 +20,7 @@ services:
       - ./ros.env
     volumes:
       - ./logs:/root/.ros/log:rw
+      - /dev:/dev
     depends_on:
       - core
   camera:
