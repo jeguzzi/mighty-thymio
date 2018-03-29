@@ -78,6 +78,7 @@ services:
     network_mode: host
     privileged: true
     command: roslaunch --wait thymioid joy_teleop.launch
+    restart: always
     env_file:
       - ./ros.env
     volumes:
