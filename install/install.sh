@@ -50,6 +50,7 @@ apt install --reinstall dnsmasq -y
 apt install hostapd iptables wpasupplicant -y
 
 cp /usr/sbin/hostapd /usr/sbin/hostapd.back
+
 cp ./hostapd /usr/sbin/hostapd
 
 ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules

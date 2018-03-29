@@ -73,6 +73,15 @@ services:
     volumes:
       - ./logs:/root/.ros/log:rw
       - /var/run/docker.sock:/var/run/docker.sock
+  joy_teleop:
+    image: jeguzzi/thymioid
+    network_mode: host
+    privileged: true
+    command: roslaunch --wait thymioid joy_teleop.launch
+    env_file:
+      - ./ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
   notebook:
     image: jeguzzi/thymioid
     network_mode: host
