@@ -21,6 +21,7 @@ services:
     volumes:
       - ./logs:/root/.ros/log:rw
       - /dev:/dev
+      - ./calibration:/root/catkin_ws/src/ros-aseba/thymio_driver/calibration:rw
     depends_on:
       - core
   camera:
