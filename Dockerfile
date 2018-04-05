@@ -33,7 +33,7 @@ RUN git clone https://github.com/hardkernel/WiringPi2-Python.git /tmp/WiringPi2-
     python2 setup.py build install && \
     cd / && rm -r /tmp/WiringPi2-Python
 
-RUN pip install ipython==5.5 watchdog jupyter numpy matplotlib docker
+RUN pip install ipython==5.5 watchdog jupyter numpy matplotlib docker scipy
 
 RUN apt-get update && apt-get install -y \
     ros-kinetic-ar-track-alvar \
@@ -42,7 +42,15 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get update && apt-get install -y \
     ros-kinetic-joy-teleop \
     ros-kinetic-joy \
+    ros-kinetic-dynamic-reconfigure \
     && rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/jeguzzi/thymioid.git src/thymioid
+RUN catkin build
+
+RUN echo v3.3
+
+RUN git -C src/ros-aseba pull
+RUN git -C src/thymioid pull
+
 RUN catkin build
