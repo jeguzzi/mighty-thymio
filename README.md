@@ -36,3 +36,5 @@ have expanded Thymio's capabilities by adding off-the-shelf hardware and open so
 ### [Install and Run the Software](https://github.com/jeguzzi/mighty-thymio/blob/master/Installation.md)
 
 ### [Interface with the robot](https://github.com/jeguzzi/mighty-thymio/blob/master/client.md)
+
+### [Calibrate the robot motors](https://github.com/jeguzzi/mighty-thymio/blob/master/calibration.md)
