@@ -19,7 +19,7 @@ CAMERA_IS_FIXED=true
 MOTOR_DEADBAND=10
 """
 
-services_template = "SERVICES=robot camera ui ups"
+services_template = 'SERVICES="robot camera ui ups"'
 
 _NO_BACKUP = ['./etc/network/interfaces.d']
 
