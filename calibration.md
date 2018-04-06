@@ -15,7 +15,11 @@ There are two procedures to calibrate this estimation; perform them in this orde
 ```bash
 docker-compose -f commands/docker-compose.yaml up calibrate
 ```
-and follow the instructions displayed on the console.
+and follow the instructions displayed on the console:
+
+- After the first beep, place the robot with its _left_ wheel at the begin of the black line, oriented along the black line. Then press the center button. After 3 seconds the robot will begin rotating anti-clockwise while keeping the left wheel still.
+- After the first beep, place the robot with its _right_ wheel at the begin of the black line, oriented along the black line. Then press the center button. After 3 seconds the robot will begin rotating clockwise while keeping the left wheel still.
+- Wait until the robot stop.
 
 3. Relaunch the robot service
 ```bash
