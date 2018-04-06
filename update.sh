@@ -2,5 +2,5 @@
 
 while read config;
 do
-/bin/bash /root/docker/migthy-thymio/do_update.sh
+/bin/bash /root/docker/mighty-thymio/do_update.sh
 done
