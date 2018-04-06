@@ -1,7 +1,7 @@
 # Motor calibration
 
-The Thymio robot has no encoders and rely soleny on power consumption to estimate the speed of the wheels.
-There are two procedures to calibrate this estimation. Perform them in this order:
+The Thymio robot has no encoders and relies soleny on power consumption to estimate the speed of the wheels.
+There are two procedures to calibrate this estimation; perform them in this order:
 
 1) [Official Motor calibration instructions](https://www.thymio.org/en:thymiomotorcalibration)
 
