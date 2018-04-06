@@ -17,16 +17,16 @@ docker-compose -f commands/docker-compose.yaml up calibrate
 ```
 and follow the instructions displayed on the console:
 
-- After the first beep, place the robot with its _left_ wheel at the begin of the black line, oriented along the black line. Then press the center button. After 3 seconds the robot will begin rotating anti-clockwise while keeping the left wheel still. Every two full rotations, the robot will increase the right wheel speed.
-- After the first beep, place the robot with its _right_ wheel at the begin of the black line, oriented along the black line. Then press the center button. After 3 seconds the robot will begin rotating clockwise while keeping the right wheel still.  Every two full rotations, the robot will increase the left wheel speed.
-- Wait until the robot stop.
+  - After the first beep, place the robot with its _left_ wheel at the begin of the black line, oriented along the black line. Then press the center button. After 3 seconds the robot will begin rotating anti-clockwise while keeping the left wheel still. Every two full rotations, the robot will increase the right wheel speed.
+  - After the first beep, place the robot with its _right_ wheel at the begin of the black line, oriented along the black line. Then press the center button. After 3 seconds the robot will begin rotating clockwise while keeping the right wheel still.  Every two full rotations, the robot will increase the left wheel speed.
+  - Wait until the robot stop.
 
 3. Edit ros.env with
 ```
 CALIBRATED=true
 ```
 
-3. Relaunch the robot service
+4. Relaunch the robot service
 ```bash
 docker-compose restart robot
 ```
