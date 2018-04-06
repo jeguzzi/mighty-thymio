@@ -61,6 +61,7 @@ services:
       - /run/network/ifstate.wlan0:/run/network/ifstate.wlan0
       - ./wlan:/wlan:rw
       - ./shutdown:/shutdown:rw
+      - ./update:/update:rw
     depends_on:
       - robot
   demos:

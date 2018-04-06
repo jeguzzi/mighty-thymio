@@ -33,6 +33,12 @@ RUN git clone https://github.com/hardkernel/WiringPi2-Python.git /tmp/WiringPi2-
     python2 setup.py build install && \
     cd / && rm -r /tmp/WiringPi2-Python
 
+RUN apt-get update && apt-get install -y \
+    gfortran libopenblas-dev liblapack-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+
+
 RUN pip install ipython==5.5 watchdog jupyter numpy matplotlib docker scipy
 
 RUN apt-get update && apt-get install -y \
@@ -48,7 +54,7 @@ RUN apt-get update && apt-get install -y \
 RUN git clone https://github.com/jeguzzi/thymioid.git src/thymioid
 RUN catkin build
 
-RUN echo v3.3
+COPY ./version.txt /version.txt
 
 RUN git -C src/ros-aseba pull
 RUN git -C src/thymioid pull

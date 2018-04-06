@@ -57,5 +57,15 @@ Learning an Image-based Obstacle Detector With Automatic Acquisition of Training
 </b>
 
 ```bash
+cd /root/docker/mighty-thymio
 docker-compose -f demo/ml/docker-compose.yml up
 ```
+
+## Software update
+
+Connect the robot to the internet and either run
+```bash
+cd /root/docker/mighty-thymio
+source do_update.sh
+```
+or hold down the right arrow (the button on top of the robot's body that points towards the right wheel) for 6 seconds.

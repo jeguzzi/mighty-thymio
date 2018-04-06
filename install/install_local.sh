@@ -53,9 +53,11 @@ printf "\n****** Create wlan  and shutdown FIFOs ****** \n"
 
 mkfifo /root/docker/mighty-thymio/wlan
 mkfifo /root/docker/mighty-thymio/shutdown
+mkfifo /root/docker/mighty-thymio/update
 
 chmod +x ../wlan.sh
 chmod +x ../shutdown.sh
+chmod +x ../update.sh
 
 printf "\n****** Install ZRAM ******\n"
 

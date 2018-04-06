@@ -15,4 +15,5 @@
 if [ -f /aafirstboot ]; then /aafirstboot start ; fi
 /bin/bash /root/docker/mighty-thymio/wlan.sh <> /root/docker/mighty-thymio/wlan &
 /bin/bash /root/docker/mighty-thymio/shutdown.sh <> /root/docker/mighty-thymio/shutdown &
+/bin/bash /root/docker/mighty-thymio/update.sh <> /root/docker/mighty-thymio/update &
 exit 0

@@ -13,7 +13,13 @@ wlan_config_template = """iface {wlan_ssid} inet dhcp
 ros_config_template = """ROS_MASTER_URI=http://localhost:11311
 ROS_HOSTNAME={hostname}
 HOSTNAME={hostname}
+CALIBRATED=false
+CAMERA_PITCH=0
+CAMERA_IS_FIXED=true
+MOTOR_DEADBAND=10
 """
+
+services_template = "SERVICES=robot camera ui ups"
 
 _NO_BACKUP = ['./etc/network/interfaces.d']
 
@@ -61,6 +67,10 @@ def main(target='/', name='thymioXX', wlans=[], **kwargs):
     with open(path, 'w') as f:
         print('Configure ROS env in {path}'.format(path=path))
         f.write(ros_config_template.format(**locals()))
+    path = os.path.join(target, './root/docker/mighty-thymio/services.env')
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, 'w') as f:
+        f.write(services_template)
 
 
 if __name__ == '__main__':
