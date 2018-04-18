@@ -14,7 +14,7 @@ services:
     image: jeguzzi/thymioid
     network_mode: host
     privileged: true
-    command: roslaunch --wait thymioid robot.launch
+    command: roslaunch --wait thymioid robot.launch odom_max_rate:=20
     restart: always
     env_file:
       - ./ros.env
