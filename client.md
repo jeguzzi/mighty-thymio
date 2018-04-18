@@ -48,3 +48,10 @@ and uses the _same_ urdf model as the real robot.
 ```bash
 roslaunch thymioid_description test_gazebo_bringup.launch
 ```
+
+## Robot parameters
+
+The robot model is defined in two packages:
+
+  -[thymio_description](https://github.com/jeguzzi/ros-aseba/thymio_description)
+  -[thymioid_description](https://github.com/jeguzzi/thymioid/thymioid_description)
