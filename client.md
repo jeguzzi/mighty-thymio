@@ -53,8 +53,8 @@ roslaunch thymioid_description test_gazebo_bringup.launch
 
 The robot model (geometrical and physical properties) is defined in two packages
 
-  - [thymio_description](https://github.com/jeguzzi/ros-aseba/thymio_description): base with wheels, IMU, proximity, and ground sensors
-  - [thymioid_description](https://github.com/jeguzzi/thymioid/thymioid_description): chassis, camera, and power-pack
+  - [thymio_description](https://github.com/jeguzzi/ros-aseba/tree/master/thymio_description): base with wheels, IMU, proximity, and ground sensors
+  - [thymioid_description](https://github.com/jeguzzi/thymioid/tree/master/thymioid_description): chassis, camera, and power-pack
 
 which contains all the robot parameters and the meshes for any robot part as [ COLLADA files](https://en.wikipedia.org/wiki/COLLADA).
 
