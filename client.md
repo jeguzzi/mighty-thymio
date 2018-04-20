@@ -34,6 +34,19 @@ rosrun rqt_reconfigure rqt_reconfigure
 roslaunch thymioid joy_teleop.launch name:=<thymioXX>
 ```
 
+## Playback the microphone stream
+
+The robot publish an (mp3) audio stream on `<thymioXX>/camera/audio` recorded by the webcam's microphone. To play it back on your computer, install `audio_common`
+```bash
+apt install ros-<YOUR_ROS_DISTRIBUTION>-audio-common
+```
+
+and then launch the `audio_play` node with
+
+```
+roslaunch thymioid audio_play.launch name:=<thymioXX>
+```
+
 ## Launch a Gazebo simulation
 
 The simulated model implements:
@@ -85,7 +98,7 @@ The following are the most important parameters for the controlling the (real) r
 
 ### camera
 
-  The camera is mounted on a titable joint (downward pitch is positive) with
+  The camera is mounted on a tiltable joint (downward pitch is positive) with
 
   - min pitch: -0.34 rad
   - max pitch: 1.3 rad

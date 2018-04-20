@@ -37,8 +37,6 @@ RUN apt-get update && apt-get install -y \
     gfortran libopenblas-dev liblapack-dev \
     && rm -rf /var/lib/apt/lists/*
 
-
-
 RUN pip install ipython==5.5 watchdog jupyter numpy matplotlib docker scipy
 
 RUN apt-get update && apt-get install -y \
@@ -49,7 +47,19 @@ RUN apt-get update && apt-get install -y \
     ros-kinetic-joy-teleop \
     ros-kinetic-joy \
     ros-kinetic-dynamic-reconfigure \
+    libgstreamer1.0-dev \
+    libgstreamer-plugins-base1.0-dev \
+    gstreamer1.0-tools \
+    gstreamer1.0-alsa \
+    gstreamer1.0-plugins-ugly \
+    gstreamer1.0-plugins-bad \
+    gstreamer1.0-plugins-good \
     && rm -rf /var/lib/apt/lists/*
+
+RUN git clone https://github.com/ros-drivers/audio_common.git src/audio_common
+RUN catkin config --blacklist audio_play sound_play thymio_navigation ethzasl_aseba
+RUN catkin build
+
 
 RUN git clone https://github.com/jeguzzi/thymioid.git src/thymioid
 RUN catkin build
