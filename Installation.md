@@ -69,3 +69,32 @@ cd /root/docker/mighty-thymio
 source do_update.sh
 ```
 or hold down the right arrow (the button on top of the robot's body that points towards the right wheel) for 6 seconds.
+
+
+## Troubleshooting
+
+### After starting, the Thymio is not blinking
+
+  1. check that all cable are connected
+  2. login to the thymio
+  3. check that docker is up
+      ```bash
+      systemctl status docker
+      ```
+      If not, reset docker:
+      ```bash
+      systemctl stop docker
+      rm -r /var/lib/docker/runtimes
+      rm -r /var/lib/docker/containers/*
+      systemctl start docker
+      source /root/docker/mighty-thymio/do_update.sh
+      ```
+  4. check that the services are up
+      ```bash
+      cd docker/mighty-thymio
+      docker-compose ps
+      ```
+      If not, recreate them:
+      ```bash
+      source do_update.sh
+      ```
