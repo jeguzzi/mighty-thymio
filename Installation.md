@@ -75,8 +75,8 @@ or hold down the right arrow (the button on top of the robot's body that points 
 
 ### After starting, the Thymio is not blinking
 
-  1. check that all cable are connected
-  2. login to the thymio
+  1. check that all cables are connected
+  2. login into the odroid
   3. check that docker is up
       ```bash
       systemctl status docker
