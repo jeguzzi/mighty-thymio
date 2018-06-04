@@ -5,15 +5,17 @@
 if [[ ! $(systemctl is-active --quiet docker) ]]; then
   logger -s "Restart the docker service"
   systemctl stop docker && systemctl start docker
+  sleep 1
 fi
 
-# if [[ ! $(systemctl is-active --quiet docker) ]]; then
-#   systemctl stop docker
-#   rm -r /var/lib/docker/runtimes
-#   sleep 2
-#   logger -s "Remove /var/lib/docker/runtimes and restart the docker service"
-#   systemctl start docker
-# fi
+if [[ ! $(systemctl is-active --quiet docker) ]]; then
+  logger -s "Remove /var/lib/docker/runtimes and restart the docker service"
+  systemctl stop docker
+  rm -r /var/lib/docker/runtimes
+  systemctl start docker
+  sleep 1
+fi
+
 #
 # if [[ ! $(systemctl is-active --quiet docker) ]]; then
 #   systemctl stop docker
