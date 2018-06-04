@@ -2,7 +2,7 @@
 
 # Check that docker is up
 
-if [[! $(systemctl is-active --quiet docker) ]]; then
+if [[ ! $(systemctl is-active --quiet docker) ]]; then
   systemctl stop docker
   logger -s "Restart the docker service"
   systemctl start docker
