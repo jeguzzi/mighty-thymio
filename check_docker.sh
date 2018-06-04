@@ -2,18 +2,19 @@
 
 # Check that docker is up
 
-if [[ ! $(systemctl is-active --quiet docker) ]]; then
+if (systemctl is-active docker)
+  then
   logger -s "Restart the docker service"
   systemctl stop docker && systemctl start docker
-  sleep 1
 fi
 
-if [[ ! $(systemctl is-active --quiet docker) ]]; then
+
+if (systemctl is-active docker)
+  then
   logger -s "Remove /var/lib/docker/runtimes and restart the docker service"
   systemctl stop docker
   rm -r /var/lib/docker/runtimes
   systemctl start docker
-  sleep 1
 fi
 
 #
