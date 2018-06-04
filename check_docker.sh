@@ -2,20 +2,20 @@
 
 # Check that docker is up
 
-if ! [[ systemctl is-active --quiet docker ]]; then
+if [[! systemctl is-active --quiet docker ]]; then
   systemctl stop docker
   logger -s "Restart the docker service"
   systemctl start docker
 fi
 
-if ! [[ systemctl is-active --quiet docker ]]; then
+if [[! systemctl is-active --quiet docker ]]; then
   systemctl stop docker
   rm -r /var/lib/docker/runtimes
   logger -s "Remove /var/lib/docker/runtimes and restart the docker service"
   systemctl start docker
 fi
 
-if ! [[ systemctl is-active --quiet docker ]]; then
+if [[! systemctl is-active --quiet docker ]]; then
   systemctl stop docker
   rm -r /var/lib/docker/runtimes
   rm -r /var/lib/docker/containers
@@ -23,11 +23,10 @@ if ! [[ systemctl is-active --quiet docker ]]; then
   systemctl start docker
 fi
 
-if ! [[ systemctl is-active --quiet docker ]]; then
+if [[! systemctl is-active --quiet docker ]]; then
   logger -s "Could not launch docker"
   exit 1
 fi
-
 
 # Check that the (essential) services are up
 
