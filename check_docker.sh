@@ -23,6 +23,7 @@ if ( ! systemctl -q is-active docker)
   systemctl stop docker
   rm -r /var/lib/docker/runtimes
   rm -r /var/lib/docker/containers
+  rm -r /var/lib/docker/contained
   systemctl start docker
 fi
 
