@@ -10,7 +10,9 @@ services:
     volumes:
       - ./logs:/root/.ros/log:rw
   robot:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile-melodic
     image: jeguzzi/thymioid:melodic
     network_mode: host
     privileged: true
