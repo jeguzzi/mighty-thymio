@@ -25,7 +25,7 @@ fi
 
 if [[ ! $(systemctl is-active --quiet docker) ]]; then
   logger -s "Could not launch docker"
-  exit 1
+  return 1
 fi
 
 # Check that the (essential) services are up
