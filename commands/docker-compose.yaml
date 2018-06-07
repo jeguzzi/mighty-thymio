@@ -17,7 +17,7 @@ services:
       - ../logs:/root/.ros/log:rw
       - ../calibration:/root/catkin_ws/src/ros-aseba/thymio_driver/calibration:rw
   calibrate-tft:
-    image: jeguzzi/thymioid:screen
+    image: jeguzzi/thymioid-screen:melodic
     network_mode: host
     privileged: true
     env_file:
