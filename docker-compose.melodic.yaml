@@ -48,7 +48,7 @@ services:
       - ./ros.env
     volumes:
       - ./logs:/root/.ros/log:rw
-      - ./sounds:/home/root/catkin_ws/src/mt_speaker/sound:r
+      - ./sounds:/root/catkin_ws/src/mt_speaker/sound
     depends_on:
       - core
   screen:
