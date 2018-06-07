@@ -43,7 +43,7 @@ services:
     network_mode: host
     privileged: true
     restart: always
-    command: roslaunch --wait mt_sound sound.launch
+    command: roslaunch --wait mt_sound sound.launch device:="hw:1,0"
     env_file:
       - ./ros.env
     volumes:
