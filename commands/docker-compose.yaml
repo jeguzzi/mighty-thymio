@@ -30,3 +30,4 @@ services:
     environment:
       - TSLIB_FBDEVICE=/dev/fb2
       - TSLIB_CALIBFILE=/tmp/pointercal
+      - LD_LIBRARY_PATH=/usr/local/lib

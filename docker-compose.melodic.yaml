@@ -76,6 +76,8 @@ services:
       - /dev:/dev
       - ./calibration/pointercal:/usr/local/etc/pointercal
     command: roslaunch tft touch.launch
+    environment:
+      - LD_LIBRARY_PATH=/usr/local/lib
   ups:
     image: jeguzzi/thymioid:melodic
     network_mode: host
