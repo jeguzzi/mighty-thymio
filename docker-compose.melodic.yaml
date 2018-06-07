@@ -55,7 +55,7 @@ services:
     image: jeguzzi/thymioid-screen:melodic
     network_mode: host
     privileged: true
-    command: rosrun tft tft_node.py tft/image:=camera/image_raw
+    command: rosrun tft tft_node.py
     restart: always
     env_file:
       - ./ros.env
