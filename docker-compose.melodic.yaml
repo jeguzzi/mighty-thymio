@@ -39,15 +39,16 @@ services:
     depends_on:
       - core
   speaker:
-    image: jeguzzi/thymioid:melodic
+    image: jeguzzi/thymioid-audio:melodic
     network_mode: host
     privileged: true
     restart: always
-    command: roslaunch --wait thymioid sound.launch
+    command: roslaunch --wait mt_sound sound.launch
     env_file:
       - ./ros.env
     volumes:
       - ./logs:/root/.ros/log:rw
+      - ./sounds:/home/root/catkin_ws/src/mt_speaker/sound:r
     depends_on:
       - core
   screen:
@@ -56,10 +57,10 @@ services:
     privileged: true
     command: rosrun tft tft_node.py tft/image:=camera/image_raw
     restart: always
-    environment:
-      - ROS_NAMESPACE=$HOSTNAME
     env_file:
       - ./ros.env
+    environment:
+      - ROS_NAMESPACE=$HOSTNAME
     volumes:
       - ./logs:/root/.ros/log:rw
       - /dev:/dev

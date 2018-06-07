@@ -30,8 +30,8 @@ yes | apt autoremove
 printf "\n****** Install docker compose ******\n"
 
 apt install python3-pip -y
-pip3 install --upgrade pip
-pip3 install docker-compose
+python3 -m pip install --upgrade pip
+python3 -m pip install docker-compose
 
 printf "\n****** Docker installation done ******\n"
 
