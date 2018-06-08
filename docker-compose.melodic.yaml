@@ -92,7 +92,7 @@ services:
       - ./ros.env
     volumes:
       - ./logs:/root/.ros/log:rw
-    command: roslaunch mt_led_matrix led_matrix.launch
+    command: roslaunch --wait mt_led_matrix led_matrix.launch
     depends_on:
       - core
   ups:
