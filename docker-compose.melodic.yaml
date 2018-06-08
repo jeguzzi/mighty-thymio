@@ -83,6 +83,18 @@ services:
       - TSLIB_TSDEVICE=/dev/input/event1
     depends_on:
       - core
+  led_matrix:
+    image: jeguzzi/thymioid-led-matrix:melodic
+    network_mode: host
+    privileged: true
+    restart: always
+    env_file:
+      - ./ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+    command: roslaunch mt_led_matrix led_matrix.launch
+    depends_on:
+      - core
   ups:
     image: jeguzzi/thymioid:melodic
     network_mode: host
