@@ -31,7 +31,7 @@ services:
     network_mode: host
     privileged: true
     restart: always
-    command: roslaunch --wait thymioid camera.launch framerate:=15 image_width:=640 image_height:=480 rectify:=false
+    command: roslaunch --wait thymioid camera.launch framerate:=15 image_width:=640 image_height:=480 rectify:=false audio_device:="hw:2,0"
     env_file:
       - ./ros.env
     volumes:
@@ -64,6 +64,8 @@ services:
     volumes:
       - ./logs:/root/.ros/log:rw
       - /dev:/dev
+    depends_on:
+      - core
   touch:
     image: jeguzzi/thymioid-screen:melodic
     network_mode: host
@@ -75,10 +77,12 @@ services:
       - ./logs:/root/.ros/log:rw
       - /dev:/dev
       - ./calibration/pointercal:/usr/local/etc/pointercal
-    command: roslaunch tft touch.launch
+    command: roslaunch --wait tft touch.launch
     environment:
       - LD_LIBRARY_PATH=/usr/local/lib
       - TSLIB_TSDEVICE=/dev/input/event1
+    depends_on:
+      - core
   ups:
     image: jeguzzi/thymioid:melodic
     network_mode: host
