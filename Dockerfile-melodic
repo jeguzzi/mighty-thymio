@@ -1,0 +1,73 @@
+FROM jeguzzi/ros:armhf-melodic-ros-dev
+MAINTAINER Jerome Guzzi "jerome@idsia.ch"
+
+# Thymio
+
+RUN apt-get update && apt-get install -y \
+    libudev-dev \
+    libxml2-dev \
+    ros-melodic-tf \
+    ros-melodic-xacro \
+    ros-melodic-robot-state-publisher \
+    ros-melodic-dynamic-reconfigure \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN git clone --recursive https://github.com/jeguzzi/ros-aseba.git src/ros-aseba
+RUN catkin config --blacklist thymio_navigation ethzasl_aseba
+RUN catkin build
+
+RUN apt-get update && apt-get install -y \
+    python-pip \
+    swig3.0 \
+    ros-melodic-image-proc \
+    ros-melodic-image-transport-plugins \
+    ros-melodic-audio-capture \
+    gfortran \
+    libopenblas-dev \
+    liblapack-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN git clone https://github.com/hardkernel/WiringPi2-Python.git /tmp/WiringPi2-Python && \
+    cd /tmp/WiringPi2-Python && \
+    git submodule init && \
+    git submodule update && \
+    swig3.0 -python -threads wiringpi.i && \
+    python2 setup.py build install && \
+    cd / && rm -r /tmp/WiringPi2-Python
+
+
+RUN apt-get update && apt-get install -y \
+    libfreetype6-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install -U pip
+RUN pip install ipython==5.5 watchdog jupyter numpy matplotlib docker scipy
+
+# Missing packages in medulla (that are available in kinetic)
+RUN git clone https://github.com/ros-drivers/usb_cam src/usb_cam && \
+    git clone https://github.com/ros-drivers/joystick_drivers.git src/joy && \
+    git clone https://github.com/ros-teleop/teleop_tools.git src/teleop_tools
+
+RUN apt-get update && apt-get install -y \
+    ros-melodic-diagnostic-updater \
+    ros-melodic-control-msgs \
+    ros-melodic-camera-info-manager \
+    ros-melodic-roslint \
+    alsa-base \
+    gstreamer1.0-alsa \
+    && rm -rf /var/lib/apt/lists/*
+
+
+RUN catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release  && \
+    catkin config --blacklist thymio_navigation ethzasl_aseba ps3joy ps3joy spacenav_node wiimote && \
+    catkin build
+
+RUN git clone https://github.com/jeguzzi/thymioid.git src/thymioid && \
+    catkin build
+
+COPY ./m_version.txt /version.txt
+
+RUN git -C src/ros-aseba pull &&\
+    git -C src/thymioid pull
+
+RUN catkin build
