@@ -31,7 +31,7 @@ services:
     network_mode: host
     privileged: true
     restart: always
-    command: roslaunch --wait thymioid camera.launch framerate:=15 image_width:=640 image_height:=480 rectify:=false audio_device:="hw:2,0"
+    command: roslaunch --wait thymioid camera.launch image_width:=640 image_height:=480 rectify:=false audio_device:="hw:2,0"
     env_file:
       - ./ros.env
     volumes:
