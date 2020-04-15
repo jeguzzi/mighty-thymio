@@ -6,8 +6,6 @@
 
   <let name="camera_joint_pitch"
     value="$(eval '$(var camera_pitch) if $(var camera_is_fixed) else 0')"/>
-  <let name="odom_rate"
-    value="$(eval '$(var odom_max_rate) if $(var odom_max_rate) > 0 else 20.0')"/>
 
   <push-ros-namespace namespace="$(var name)"/>
 
