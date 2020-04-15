@@ -38,3 +38,5 @@ have expanded Thymio's capabilities by adding off-the-shelf hardware and open so
 ### [Interface with the robot](https://github.com/jeguzzi/mighty-thymio/blob/master/client.md)
 
 ### [Calibrate the robot motors](https://github.com/jeguzzi/mighty-thymio/blob/master/calibration.md)
+
+### [ROS2](https://github.com/jeguzzi/mighty-thymio/blob/master/ros2.md)

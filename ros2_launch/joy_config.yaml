@@ -1,0 +1,191 @@
+# Logitech F710 wireless controller
+# Deadman (enable) button: Right Trigger
+# D<>X button (located on the back panel) must be set to D
+/**:
+  ros__parameters:
+    piloting:
+      type: topic
+      interface_type: "geometry_msgs/msg/Twist"
+      topic_name: cmd_vel
+      deadman_buttons: [7]  # RT
+      axis_mappings:
+        linear-x:
+          axis: 3  # Right thumb stick (up/down)
+          scale: 0.12
+        angular-z:
+          axis: 0  # Left thumb stick (left/right)
+          scale: 1.5
+    led_kit:
+      type: topic
+      interface_type: "std_msgs/msg/Float32"
+      topic_name: led/gesture/kit
+      deadman_buttons: [7,3]  # RT + Y
+      axis_mappings:
+        data:
+          axis: 1
+          scale: 1.0
+          offset: 1.2
+    led_circle:
+      type: topic
+      interface_type: "std_msgs/msg/Float32"
+      topic_name: led/gesture/circle
+      deadman_buttons: [7,2]  # RT + B
+      axis_mappings:
+        data:
+          axis: 1
+          scale: 1.0
+          offset: 1.2
+    led_alive:
+      type: topic
+      interface_type: "std_msgs/msg/Empty"
+      topic_name: led/gesture/alive
+      message_value: {}
+      deadman_buttons: [7,1]  # RT + A
+    led_blink:
+      type: topic
+      interface_type: "std_msgs/msg/Float32"
+      topic_name: led/gesture/blink
+      deadman_buttons: [7,0]  # RT + X
+      axis_mappings:
+        data:
+          axis: 1
+          scale: 1.0
+          offset: 1.2
+    led_off:
+      type: topic
+      interface_type: "std_msgs/msg/Empty"
+      topic_name: led/gesture/off
+      buttons: [7,9]  # RT
+      message_value: null
+    body_led_off:
+      type: topic
+      interface_type: "std_msgs/msg/ColorRGBA"
+      topic_name: led/body/top
+      deadman_buttons: [6,9]  # RT
+      message_value:
+        r:
+          value: 0.0
+        g:
+          value: 0.0
+        b:
+          value: 0.0
+    body_led_y:
+      type: topic
+      interface_type: "std_msgs/msg/ColorRGBA"
+      topic_name: led/body/top
+      deadman_buttons: [6,3]  # RT + Y
+      message_value:
+        r:
+          value: 1.0
+        g:
+          value: 1.0
+        b:
+          value: 0.0
+    body_led_r:
+      type: topic
+      interface_type: "std_msgs/msg/ColorRGBA"
+      topic_name: led/body/top
+      deadman_buttons: [6,2]  # RT + B
+      message_value:
+        r:
+          value: 1.0
+        g:
+          value: 0.0
+        b:
+          value: 0.0
+    body_led_g:
+      type: topic
+      interface_type: "std_msgs/msg/ColorRGBA"
+      topic_name: led/body/top
+      deadman_buttons: [6,1]  # RT + A
+      message_value:
+        r:
+          value: 0.0
+        g:
+          value: 1.0
+        b:
+          value: 0.0
+    body_led_b:
+      type: topic
+      interface_type: "std_msgs/msg/ColorRGBA"
+      topic_name: led/body/top
+      deadman_buttons: [6,0]  # RT + X
+      message_value:
+        r:
+          value: 0.0
+        g:
+          value: 0.0
+        b:
+          value: 1.0
+    play_sound_0:
+      type: topic
+      interface_type: "thymio_msgs/msg/SystemSound"
+      topic_name: sound/play/system
+      deadman_buttons: [6,7,0]
+      message_value:
+        sound:
+          value: 0
+    play_sound_1:
+      type: topic
+      interface_type: "thymio_msgs/msg/SystemSound"
+      topic_name: sound/play/system
+      deadman_buttons: [6,7,1]
+      message_value:
+        sound:
+          value: 1
+    play_sound_2:
+      type: topic
+      interface_type: "thymio_msgs/msg/SystemSound"
+      topic_name: sound/play/system
+      deadman_buttons: [6,7,2]
+      message_value:
+        sound:
+          value: 2
+    play_sound_3:
+      type: topic
+      interface_type: "thymio_msgs/msg/SystemSound"
+      topic_name: sound/play/system
+      deadman_buttons: [6,7,3]
+      message_value:
+        sound:
+          value: 3
+    play_sound_4:
+      type: topic
+      interface_type: "thymio_msgs/msg/SystemSound"
+      topic_name: sound/play/system
+      deadman_buttons: [6,7,4]
+      message_value:
+        sound:
+          value: 4
+    play_sound_5:
+      type: topic
+      interface_type: "thymio_msgs/msg/SystemSound"
+      topic_name: sound/play/system
+      deadman_buttons: [6,7,5]
+      message_value:
+        sound:
+          value: 5
+    play_sound_6:
+      type: topic
+      interface_type: "thymio_msgs/msg/SystemSound"
+      topic_name: sound/play/system
+      deadman_buttons: [6,7,8]
+      message_value:
+        sound:
+          value: 6
+    play_sound_7:
+      type: topic
+      interface_type: "thymio_msgs/msg/SystemSound"
+      topic_name: sound/play/system
+      deadman_buttons: [6,7,9]
+      message_value:
+        sound:
+          value: 7
+    play_sound_8:
+      type: topic
+      interface_type: "thymio_msgs/msg/SystemSound"
+      topic_name: sound/play/system
+      deadman_buttons: [6,7,10]
+      message_value:
+        sound:
+          value: -1

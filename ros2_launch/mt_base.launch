@@ -1,0 +1,12 @@
+<launch>
+  <let name="name" value="$(env HOSTNAME '')"/>
+  <arg name="device" default="ser:device=/dev/ttyACM0"/>
+
+  <push-ros-namespace namespace="$(var name)"/>
+
+  <include file="$(find-pkg-share thymio_driver)/launch/base.launch">
+    <arg name="device" value="$(var device)"/>
+    <arg name="motor_speed_deadband" value="$(env MOTOR_DEADBAND 10)"/>
+    <arg name="motor_period" value="$(env MOTOR_PERIOD 5)"/>
+  </include>
+</launch>

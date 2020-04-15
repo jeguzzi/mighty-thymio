@@ -1,0 +1,84 @@
+version: '3'
+services:
+  robot:
+    image: jeguzzi/thymio:eloquent
+    network_mode: &net host
+    pid: &pid host
+    privileged: true
+    command: ros2 launch thymio_driver mt_base.launch
+    env_file:
+      - ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+      - ./ros2_launch/mt_base.launch:/ros_ws/install/thymio_driver/share/thymio_driver/launch/mt_base.launch:ro
+      - ./ros2_launch/motor.yaml:/ros_ws/install/thymio_driver/share/thymio_driver/launch/motor.yaml:ro
+  state:
+    image: jeguzzi/thymioid:eloquent
+    network_mode: *net
+    pid: *pid
+    command: ros2 launch thymioid mt_state.launch
+    env_file:
+      - ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+      - ./ros2_launch/mt_state.launch:/ros_ws/install/thymioid/share/thymioid/launch/mt_state.launch:ro
+  camera:
+    image: jeguzzi/mt-camera:eloquent
+    network_mode: *net
+    pid: *pid
+    privileged: true
+    command: ros2 launch v4l2_camera camera.launch
+    env_file:
+      - ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+      - ./ros2_launch/camera.yaml:/root/.ros/camera_info/usb_2.0_camera.yaml:ro
+      - ./ros2_launch/camera.launch:/opt/ros/eloquent/share/v4l2_camera/launch/camera.launch:ro
+  ups:
+    image: jeguzzi/mt-ups:eloquent
+    network_mode: *net
+    pid: *pid
+    privileged: true
+    command: ros2 launch odroid_ups mt_ups.launch
+    env_file:
+      - ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+      - ./ros2_launch/mt_ups.launch:/ros_ws/install/odroid_ups/share/odroid_ups/launch/mt_ups.launch:ro
+  ui:
+    image: jeguzzi/thymioid:eloquent
+    network_mode: *net
+    pid: *pid
+    command: ros2 launch thymioid mt_ui.launch
+    env_file:
+      - ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+      - ./ros2_launch/mt_ui.launch:/ros_ws/install/thymioid/share/thymioid/launch/mt_ui.launch:ro
+      - /run/network/ifstate.wlan0:/run/network/ifstate.wlan0
+      - /root/docker/mighty-thymio/wlan:/wlan:rw
+      - /root/docker/mighty-thymio/shutdown:/shutdown:rw
+      - /root/docker/mighty-thymio/update:/update:rw
+    depends_on:
+      - robot
+  teleop:
+    image: jeguzzi/mt-teleop:eloquent
+    network_mode: *net
+    pid: *pid
+    privileged: true
+    command: ros2 launch thymioid mt_teleop.launch
+    env_file:
+      - ros.env
+    volumes:
+      - ./logs:/root/.ros/log:rw
+      - ./ros2_launch/mt_teleop.launch:/ros_ws/install/thymioid/share/thymioid/launch/mt_teleop.launch:ro
+      - ./ros2_launch/joy_config.yaml:/ros_ws/install/thymioid/share/thymioid/configuration/joy_config.yaml:ro
+    depends_on:
+      - robot
+  portainer:
+    command: --no-auth
+    image: portainer/portainer
+    network_mode: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always

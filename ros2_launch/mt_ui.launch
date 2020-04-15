@@ -1,0 +1,25 @@
+<launch>
+  <let name="name" value="$(env HOSTNAME '')"/>
+  <let name="long_press_duration" value="3"/>
+  <let name="menu_timeout" value="5"/>
+  <let name="selection_timeout" value="3"/>
+  <let name="target_timeout" value="8"/>
+
+  <let name="wlans" value="$(env wlans 'drone_wifi')"/>
+
+  <push-ros-namespace namespace="$(var name)"/>
+
+  <node name="ups_ward" exec="ups_ui" pkg="thymioid" output="screen">
+    <param name="index" value="1"/>
+  </node>
+  <node name="ui" exec="ui" pkg="thymioid" output="screen">
+    <param name="long_press_duration" value="$(var long_press_duration)"/>
+    <param name="menu_timeout" value="$(var menu_timeout)"/>
+    <param name="selection_timeout" value="$(var selection_timeout)"/>
+    <param name="target_timeout" value="$(var target_timeout)"/>
+  </node>
+  <node name="wifi_menu" exec="wifi_menu" pkg="thymioid" output="screen">
+    <param name="wlan_interfaces" value="$(var wlans)" value-sep=", "/>
+    <param name="index" value="0"/>
+  </node>
+</launch>

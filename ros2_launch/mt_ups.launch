@@ -1,0 +1,5 @@
+<launch>
+  <let name="name" value="$(env HOSTNAME '')"/>
+  <push-ros-namespace namespace="$(var name)"/>
+  <node name="ups" exec="ups" pkg="odroid_ups"/>
+</launch>
