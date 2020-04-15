@@ -5,6 +5,7 @@ services:
     network_mode: &net host
     pid: &pid host
     privileged: true
+    restart: always
     command: ros2 launch thymio_driver mt_base.launch
     env_file:
       - ros.env
@@ -17,6 +18,7 @@ services:
     network_mode: *net
     pid: *pid
     command: ros2 launch thymioid mt_state.launch
+    restart: always
     env_file:
       - ros.env
     volumes:
@@ -28,6 +30,7 @@ services:
     pid: *pid
     privileged: true
     command: ros2 launch v4l2_camera camera.launch
+    restart: always
     env_file:
       - ros.env
     volumes:
@@ -40,6 +43,7 @@ services:
     pid: *pid
     privileged: true
     command: ros2 launch odroid_ups mt_ups.launch
+    restart: always
     env_file:
       - ros.env
     volumes:
@@ -50,6 +54,7 @@ services:
     network_mode: *net
     pid: *pid
     command: ros2 launch thymioid mt_ui.launch
+    restart: always
     env_file:
       - ros.env
     volumes:
@@ -67,6 +72,7 @@ services:
     pid: *pid
     privileged: true
     command: ros2 launch thymioid mt_teleop.launch
+    restart: always
     env_file:
       - ros.env
     volumes:
