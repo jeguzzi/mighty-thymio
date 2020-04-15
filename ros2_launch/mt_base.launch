@@ -8,5 +8,6 @@
     <arg name="device" value="$(var device)"/>
     <arg name="motor_speed_deadband" value="$(env MOTOR_DEADBAND 10)"/>
     <arg name="motor_period" value="$(env MOTOR_PERIOD 5)"/>
+    <arg name="tf_prefix" value="$(var name)"/>
   </include>
 </launch>
