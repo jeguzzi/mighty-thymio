@@ -1,3 +1,4 @@
 .ipynb_checkpoints
 Untitled*.ipynb
 ros.env
+.DS_Store

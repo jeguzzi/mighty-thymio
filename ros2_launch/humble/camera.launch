@@ -1,0 +1,18 @@
+<launch>
+  <let name="image_width" value="$(env IMAGE_WIDTH 640)"/>
+  <let name="image_height" value="$(env IMAGE_HEIGHT 480)"/>
+  <let name="name" value="$(env HOSTNAME '')"/>
+  <!-- TODO(?) the [dist] camera driver is not currently using the device param -->
+  <!-- <arg name="device" default="/dev/video0"/> -->
+  <!-- TODO(?) the camera driver is not currently filling in the header.frame_id field -->
+
+  <push-ros-namespace namespace="$(var name)"/>
+
+  <executable cmd="v4l2-ctl --set-fmt-video=pixelformat=YUYV" name="camera_config" output="screen"/>
+  <node name="camera" pkg="v4l2_camera" exec="v4l2_camera_node" output="screen">
+    <!-- <param name="video_device" value="$(var device)"/> -->
+    <param name="image_size" value="$(var image_width),$(var image_height)" value-sep=","/>
+    <remap from="/image_raw" to="image_raw"/>
+    <remap from="/camera_info" to="camera_info"/>
+  </node>
+</launch>

@@ -1,0 +1,11 @@
+<launch>
+  <arg name="device" default="ser:device=/dev/ttyACM0"/>
+
+  <include file="$(find-pkg-share thymio_driver)/launch/main.launch">
+    <arg name="device" value="$(var device)"/>
+    <arg name="name" value="$(env HOSTNAME '')"/>
+    <arg name="motor_speed_deadband" value="$(env MOTOR_DEADBAND 10)"/>
+    <arg name="motor_period" value="$(env MOTOR_PERIOD 5)"/>
+    <arg name="model" value="False"/>
+  </include>
+</launch>
