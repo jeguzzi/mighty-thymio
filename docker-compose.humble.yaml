@@ -11,8 +11,8 @@ services:
       - ros.env
     volumes:
       - ./logs:/root/.ros/log:rw
-      - ./ros2_launch/humble/mt_base.launch:/opt/ros/humble/share/thymio_driver/launch/mt_base.launch:ro
-      - ./ros2_launch/humble/motor.yaml:/opt/ros/humble/share/thymio_driver/launch/motor.yaml:ro
+      - ./ros2_launch/humble/mt_base.launch:/opt/ros/humble/thymio_driver/share/thymio_driver/launch/mt_base.launch:ro
+      - ./ros2_launch/humble/motor.yaml:/opt/ros/humble/thymio_driver/share/thymio_driver/launch/motor.yaml:ro
   state:
     image: jeguzzi/thymioid:humble
     network_mode: *net
@@ -23,7 +23,7 @@ services:
       - ros.env
     volumes:
       - ./logs:/root/.ros/log:rw
-      - ./ros2_launch/humble/mt_state.launch:/opt/ros/humble/share/thymioid/launch/mt_state.launch:ro
+      - ./ros2_launch/humble/mt_state.launch:/opt/ros/humble/thymioid/share/thymioid/launch/mt_state.launch:ro
   camera:
     image: jeguzzi/mt-camera:humble
     network_mode: *net
@@ -36,7 +36,7 @@ services:
     volumes:
       - ./logs:/root/.ros/log:rw
       - ./ros2_launch/humble/camera.yaml:/root/.ros/camera_info/usb_2.0_camera.yaml:ro
-      - ./ros2_launch/humble/camera.launch:/opt/ros/humble/share/v4l2_camera/launch/camera.launch:ro
+      - ./ros2_launch/humble/camera.launch:/opt/ros/humble/v4l2_camera/share/v4l2_camera/launch/camera.launch:ro
   ups:
     image: jeguzzi/mt-ups:humble
     network_mode: *net
@@ -48,7 +48,7 @@ services:
       - ros.env
     volumes:
       - ./logs:/root/.ros/log:rw
-      - ./ros2_launch/humble/mt_ups.launch:/opt/ros/humble/share/odroid_ups/launch/mt_ups.launch:ro
+      - ./ros2_launch/humble/mt_ups.launch:/opt/ros/humble/odroid_ups/share/odroid_ups/launch/mt_ups.launch:ro
   ui:
     image: jeguzzi/thymioid:humble
     network_mode: *net
@@ -59,7 +59,7 @@ services:
       - ros.env
     volumes:
       - ./logs:/root/.ros/log:rw
-      - ./ros2_launch/humble/mt_ui.launch:/opt/ros/humble/share/thymioid/launch/mt_ui.launch:ro
+      - ./ros2_launch/humble/mt_ui.launch:/opt/ros/humble/thymioid/share/thymioid/launch/mt_ui.launch:ro
       - /run/network/ifstate.wlan0:/run/network/ifstate.wlan0
       - /root/docker/mighty-thymio/wlan:/wlan:rw
       - /root/docker/mighty-thymio/shutdown:/shutdown:rw
@@ -77,8 +77,8 @@ services:
       - ros.env
     volumes:
       - ./logs:/root/.ros/log:rw
-      - ./ros2_launch/humble/mt_teleop.launch:/opt/ros/humble/share/thymioid/launch/mt_teleop.launch:ro
-      - ./ros2_launch/humble/joy_config.yaml:/opt/ros/humble/share/thymioid/configuration/joy_config.yaml:ro
+      - ./ros2_launch/humble/mt_teleop.launch:/opt/ros/humble/thymioid/share/thymioid/launch/mt_teleop.launch:ro
+      - ./ros2_launch/humble/joy_config.yaml:/opt/ros/humble/thymioid/share/thymioid/configuration/joy_config.yaml:ro
     depends_on:
       - robot
   portainer:
