@@ -14,5 +14,13 @@
     <param name="image_size" value="$(var image_width),$(var image_height)" value-sep=","/>
     <remap from="/image_raw" to="image_raw"/>
     <remap from="/camera_info" to="camera_info"/>
+    <param name="backlight_compensation" value="0"/>
+    <param name="brightness" value="50"/>
+    <param name="contrast" value="0"/>
+    <param name="gain" value="0"/>
+    <param name="gamma" value="0"/>
+    <param name="hue" value="0"/>
+    <param name="saturation" value="50"/>
+    <param name="sharpness" value="1"/>
   </node>
 </launch>
