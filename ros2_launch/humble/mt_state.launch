@@ -5,9 +5,15 @@
   <let name="odom_rate" value="20"/>
 
   <let name="camera_joint_pitch"
-    value="$(eval '$(var camera_pitch) if $(var camera_is_fixed) else 0')"/>
+    value="$(eval '$(var camera_pitch) if $(var camera_is_fixed) else 0.0')"/>
 
   <push-ros-namespace namespace="$(var name)"/>
+
+  <node pkg="thymioid" name="camera_pitch_controller" exec="camera_pitch_controller"
+    unless="$(var camera_is_fixed)">
+    <param name="pitch" value="$(var camera_pitch)"/>
+    <param name="joint" value="$(var name)/camera_body_support_joint"/>
+  </node>
 
   <include file="$(find-pkg-share thymioid_description)/launch/model.launch.py">
     <arg name="name" value="$(var name)"/>
@@ -15,11 +21,5 @@
     <arg name="camera_pitch" value="$(var camera_joint_pitch)"/>
     <arg name="odom_rate" value="$(var odom_rate)"/>
   </include>
-
-  <node pkg="thymioid" name="camera_pitch_controller" exec="camera_pitch_controller"
-    unless="$(var camera_is_fixed)">
-    <param name="pitch" value="$(var camera_pitch)"/>
-    <param name="joint" value="$(var name)/camera_body_support_joint"/>
-  </node>
 
 </launch>
